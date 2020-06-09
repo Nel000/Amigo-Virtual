@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
             case (4):
                 friend.GetComponent<Friend>().SaveFriend();
                 Application.Quit();
+                Debug.Log("EXIT");
                 break;
 
         }
