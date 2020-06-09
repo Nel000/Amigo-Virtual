@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 9f54fecee486c0c4dad03b7a02d7c92e
+guid: dc7162c802b44844bb0f4f4e5c8de82a
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 6954e83dae532814ea902fff35ae4390, type: 2}
+      74: -203655887218126122
+    second: mixamo.com
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -72,8 +70,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - dc7162c802b44844bb0f4f4e5c8de82a
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -93,7 +90,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
