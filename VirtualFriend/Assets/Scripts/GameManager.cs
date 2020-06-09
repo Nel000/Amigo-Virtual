@@ -26,15 +26,15 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         happinessText.GetComponent<Text>().text =
-            "" + friend.GetComponent<VirtualFriend>().pHappiness;
+            "" + friend.GetComponent<Friend>().pHappiness;
         hungerText.GetComponent<Text>().text =
-            "" + friend.GetComponent<VirtualFriend>().pHunger;
+            "" + friend.GetComponent<Friend>().pHunger;
         cleanlinessText.GetComponent<Text>().text =
-            "" + friend.GetComponent<VirtualFriend>().pCleanliness;
+            "" + friend.GetComponent<Friend>().pCleanliness;
         energyText.GetComponent<Text>().text =
-            "" + friend.GetComponent<VirtualFriend>().pEnergy;
+            "" + friend.GetComponent<Friend>().pEnergy;
         nameText.GetComponent<Text>().text =
-            friend.GetComponent<VirtualFriend>().pName;
+            friend.GetComponent<Friend>().pName;
     }
 
     public void TriggerNamePanel(bool b)
@@ -43,10 +43,10 @@ public class GameManager : MonoBehaviour
 
         if (b)
         {
-            friend.GetComponent<VirtualFriend>().name =
+            friend.GetComponent<Friend>().name =
                 nameInput.GetComponent<InputField>().text;
             PlayerPrefs.SetString(
-                "Name", friend.GetComponent<VirtualFriend>().name);
+                "Name", friend.GetComponent<Friend>().name);
         }
     }
 
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
                 break;
             case (4):
-                friend.GetComponent<VirtualFriend>().SaveRobot();
+                friend.GetComponent<Friend>().SaveFriend();
                 Application.Quit();
                 break;
 
