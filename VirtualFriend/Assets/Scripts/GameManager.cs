@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
                 friendPanel.SetActive(!friendPanel.activeInHierarchy);
                 break;
             case (1):
-
+                SceneManager.LoadScene("Runner");
                 break;
             case (2):
 
