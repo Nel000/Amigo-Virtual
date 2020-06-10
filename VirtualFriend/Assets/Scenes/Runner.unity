@@ -171,6 +171,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 315610644886234329, guid: a2aae2b51655d6044a00a44b82071945,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 7c061a84ffd36c24ea05cd30d151f857, type: 3}
+    - target: {fileID: 315610644886234329, guid: a2aae2b51655d6044a00a44b82071945,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 814c2179bdd979a46ad4f014f175c856, type: 2}
     - target: {fileID: 3427786025112530753, guid: a2aae2b51655d6044a00a44b82071945,
         type: 3}
       propertyPath: m_Enabled
@@ -385,8 +395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 822565252}
-  forwardForce: 5
-  sidewaysForce: 10
+  forwardForce: 4
+  sidewaysForce: 8
 --- !u!4 &822565255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7704328502791768483, guid: a2aae2b51655d6044a00a44b82071945,
