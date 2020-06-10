@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         if (friend)
             Destroy(friend);
         friend = Instantiate(
-            friendList[i], Vector3.zero, Quaternion.identity) as GameObject;
+            friendList[i])/*, Vector3.zero, Quaternion.identity)*/ as GameObject;
 
         if (friendPanel.activeInHierarchy)
             friendPanel.SetActive(false);
