@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Main");
     }
 
     void flashTheText()

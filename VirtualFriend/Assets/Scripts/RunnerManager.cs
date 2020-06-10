@@ -2,10 +2,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeLevel : MonoBehaviour
+public class RunnerManager : MonoBehaviour
 {
     private void Start()
     {
+        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+
         StartCoroutine(loadSceneAfterDelay(25));
     }
 

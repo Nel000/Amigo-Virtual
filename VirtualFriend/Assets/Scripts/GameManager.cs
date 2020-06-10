@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
         /*if (!PlayerPrefs.HasKey("looks"))
             PlayerPrefs.SetInt("looks", 0);
         CreateFriend(PlayerPrefs.GetInt("looks"));*/
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void Update()
