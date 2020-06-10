@@ -1,18 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FriendMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Rigidbody rb;
 
-    // Update is called once per frame
-    void Update()
+    public float forwardForce;
+    public float sidewaysForce;
+
+    private void FixedUpdate()
     {
-        
+        transform.position += Vector3.forward * Time.deltaTime * forwardForce;
+
+        if (Input.GetKey("d"))
+        {
+            rb.AddForce(
+                sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
+
+        if (Input.GetKey("a"))
+        {
+            rb.AddForce(
+                -sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
     }
 }
