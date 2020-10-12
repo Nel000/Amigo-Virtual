@@ -37,8 +37,8 @@ public class GameManager : MonoBehaviour
             "" + friend.GetComponent<Friend>().pCleanliness;
         energyText.GetComponent<Text>().text =
             "" + friend.GetComponent<Friend>().pEnergy;
-        nameText.GetComponent<Text>().text =
-            friend.GetComponent<Friend>().pName;
+        /*nameText.GetComponent<Text>().text =
+            friend.GetComponent<Friend>().pName;*/
     }
 
     public void TriggerNamePanel(bool b)
