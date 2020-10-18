@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public GameObject friendPanel;
     public GameObject[] friendList;
 
+    public GameObject[] customizationItems;
+
+    public bool isHeadOn;
+
     private void Start()
     {
         /*if (!PlayerPrefs.HasKey("looks"))
@@ -75,6 +79,31 @@ public class GameManager : MonoBehaviour
                 friend.GetComponent<Friend>().SaveFriend();
                 Application.Quit();
                 Debug.Log("EXIT");
+                break;
+
+        }
+    }
+
+    public void CustomizationButtonBehavior(int i)
+    {
+        switch (i)
+        {
+            case (0):
+                customizationItems[0].SetActive(true);
+                isHeadOn = true;
+                break;
+            case (1):
+                customizationItems[0].SetActive(false);
+                isHeadOn = false;
+                break;
+            case (2):
+
+                break;
+            case (3):
+
+                break;
+            case (4):
+
                 break;
 
         }
