@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class RunnerManager : MonoBehaviour
 {
+    public GameObject friend;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -16,5 +18,6 @@ public class RunnerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitBySecs);
         SceneManager.LoadScene("Main");
+        friend.GetComponent<Friend>().SaveFriend();
     }
 }
