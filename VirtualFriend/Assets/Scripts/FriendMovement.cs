@@ -9,18 +9,17 @@ public class FriendMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        var x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * 5.0f;
         transform.position += Vector3.forward * Time.deltaTime * forwardForce;
 
         if (Input.GetKey("d"))
         {
-            rb.AddForce(
-                sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            transform.Translate(x, 0, 0);
         }
 
         if (Input.GetKey("a"))
         {
-            rb.AddForce(
-                -sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            transform.Translate(x, 0, 0);
         }
     }
 }
