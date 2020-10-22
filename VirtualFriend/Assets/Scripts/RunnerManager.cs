@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 public class RunnerManager : MonoBehaviour
 {
     public GameObject friend;
+    public Canvas canvas;
 
     private void Start()
     {
         Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
 
-        StartCoroutine(loadSceneAfterDelay(25));
+        StartCoroutine(loadSceneAfterDelay(7));
     }
 
     IEnumerator loadSceneAfterDelay(float waitBySecs)

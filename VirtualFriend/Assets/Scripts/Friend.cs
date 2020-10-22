@@ -15,7 +15,12 @@ public class Friend : MonoBehaviour
     [SerializeField]
     private float energy;
     [SerializeField]
+    public float top;
+    [SerializeField]
     private string sName;
+
+    public GameObject topButtonOn;
+    public GameObject topButtonOff;
 
     public float subtractHunger = -5;
     public float subtractHappiness = -5;
@@ -30,6 +35,8 @@ public class Friend : MonoBehaviour
     public StatBar cleanlinessBar;
     public StatBar energyBar;
 
+    
+
     void Start()
     {
         //PlayerPrefs.SetString("then", "05/14/2020 09:20:12");
@@ -41,6 +48,8 @@ public class Friend : MonoBehaviour
         happinessBar.SetMaxHealth(maxValue);
         cleanlinessBar.SetMaxHealth(maxValue);
         energyBar.SetMaxHealth(maxValue);
+
+        CheckForUnlocked();
     }
 
     void Update()
@@ -122,6 +131,15 @@ public class Friend : MonoBehaviour
         else
         {
             energy = PlayerPrefs.GetFloat("energy");
+        }
+        if (!PlayerPrefs.HasKey("top"))
+        {
+            top = 100;
+            PlayerPrefs.SetFloat("hat", top);
+        }
+        else
+        {
+            top = PlayerPrefs.GetFloat("top");
         }
 
         /*if (!PlayerPrefs.HasKey("then"))
@@ -235,6 +253,13 @@ public class Friend : MonoBehaviour
             energy = 100;
     }
 
+    public void UpdateTop(int i)
+    {
+        top += i;
+        if (top > 100)
+            top = 100;
+    }
+
     public void SaveFriend()
     {
         /*if (!serverTime)
@@ -243,5 +268,15 @@ public class Friend : MonoBehaviour
         PlayerPrefs.SetFloat("happiness", happiness);
         PlayerPrefs.SetFloat("cleanliness", cleanliness);
         PlayerPrefs.SetFloat("energy", energy);
+        PlayerPrefs.SetFloat("top", top);
+    }
+
+    public void CheckForUnlocked()
+    {
+        if (top < 100)
+        {
+            topButtonOn.SetActive(true);
+            topButtonOff.SetActive(true);
+        }
     }
 }

@@ -13,6 +13,7 @@ public class PickUp : MonoBehaviour
             print("Item picked up");
             Destroy(gameObject);
             friend.UpdateHappiness(100);
+            friend.UpdateTop(-50);
         }
     }
 }

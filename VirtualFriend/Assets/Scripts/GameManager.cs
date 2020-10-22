@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] customizationItems;
 
-    public bool isHeadOn;
+    private bool isHeadOn;
 
     private void Start()
     {
@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
                 break;
             case (1):
                 SceneManager.LoadScene("Runner");
+                friend.GetComponent<Friend>().SaveFriend();
                 break;
             case (2):
 
