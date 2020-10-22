@@ -81,6 +81,10 @@ public class GameManager : MonoBehaviour
                 Application.Quit();
                 Debug.Log("EXIT");
                 break;
+            case (5):
+                PlayerPrefs.DeleteAll();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                break;
 
         }
     }
