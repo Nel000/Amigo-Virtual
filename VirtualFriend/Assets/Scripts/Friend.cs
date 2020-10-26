@@ -30,13 +30,12 @@ public class Friend : MonoBehaviour
     private bool serverTime;
     private int clickCount;
 
+    public Animator friendAnim;
+
     public StatBar hungerBar;
     public StatBar happinessBar;
     public StatBar cleanlinessBar;
     public StatBar energyBar;
-
-    
-
     void Start()
     {
         //PlayerPrefs.SetString("then", "05/14/2020 09:20:12");
@@ -50,10 +49,13 @@ public class Friend : MonoBehaviour
         energyBar.SetMaxHealth(maxValue);
 
         CheckForUnlocked();
+        CheckStatus();
     }
 
     void Update()
     {
+        CheckStatus();
+
         if (Input.GetMouseButtonUp(0))
         {
             Vector2 v =
@@ -278,5 +280,17 @@ public class Friend : MonoBehaviour
             topButtonOn.SetActive(true);
             topButtonOff.SetActive(true);
         }
+    }
+
+    public void CheckStatus()
+    {
+        if (energy < 80)
+            friendAnim.SetTrigger("Tired");
+        else if (happiness < 80)
+            friendAnim.SetTrigger("Sad");
+        else if (hunger < 80)
+            friendAnim.SetTrigger("Hungry");
+        else
+            friendAnim.SetTrigger("Normal");
     }
 }
