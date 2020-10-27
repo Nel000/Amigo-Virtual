@@ -1,30 +1,30 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MenuManager : MonoBehaviour
+public class SetupManager : MonoBehaviour
 {
-    public GameObject flashText;
-
-    public Text play;
-    public Text reset;
+    public Image option1;
+    public Image option2;
 
     private int numOfOptions = 2;
 
     private int selectedOption;
 
-    int levelIndex;
-
     public readonly int defaultLastLevel = 1; // Set as appropriate
     private static bool loaded = false;
 
+    int levelIndex;
+
+    // Start is called before the first frame update
     void Start()
     {
         selectedOption = 1;
-        play.color = new Color32(255, 255, 255, 255);
-        reset.color = new Color32(0, 0, 0, 255);
 
-        InvokeRepeating("flashTheText", 0f, 0.5f);
+        option1.color = new Color32(255, 255, 255, 255);
+        option2.color = new Color32(0, 0, 0, 255);
 
         if (!loaded)
         {
@@ -33,11 +33,9 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            SceneManager.LoadScene("Main");
-
         if (Input.GetKeyDown(KeyCode.RightArrow) /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption += 1;
@@ -46,16 +44,16 @@ public class MenuManager : MonoBehaviour
                 selectedOption = 1;
             }
 
-            play.color = new Color32(0, 0, 0, 255);
-            reset.color = new Color32(0, 0, 0, 255);
+            option1.color = new Color32(0, 0, 0, 255);
+            option2.color = new Color32(0, 0, 0, 255);
 
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    play.color = new Color32(255, 255, 255, 255);
+                    option1.color = new Color32(255, 255, 255, 255);
                     break;
                 case 2:
-                    reset.color = new Color32(255, 255, 255, 255);
+                    option2.color = new Color32(255, 255, 255, 255);
                     break;
             }
         }
@@ -68,16 +66,16 @@ public class MenuManager : MonoBehaviour
                 selectedOption = numOfOptions;
             }
 
-            play.color = new Color32(0, 0, 0, 255); //Make sure all others will be black (or do any visual you want to use to indicate this)
-            reset.color = new Color32(0, 0, 0, 255);
+            option1.color = new Color32(0, 0, 0, 255); //Make sure all others will be black (or do any visual you want to use to indicate this)
+            option2.color = new Color32(0, 0, 0, 255);
 
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    play.color = new Color32(255, 255, 255, 255);
+                    option1.color = new Color32(255, 255, 255, 255);
                     break;
                 case 2:
-                    reset.color = new Color32(255, 255, 255, 255);
+                    option2.color = new Color32(255, 255, 255, 255);
                     break;
             }
         }
@@ -89,36 +87,18 @@ public class MenuManager : MonoBehaviour
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    Play();
+                    levelIndex = SceneManager.GetActiveScene().buildIndex + 1; // use this instead
+                    PlayerPrefs.SetInt("Last_Level", levelIndex);
+                    PlayerPrefs.Save();
+                    SceneManager.LoadScene("Main");
                     break;
                 case 2:
-                    PlayerPrefs.DeleteAll();
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    levelIndex = SceneManager.GetActiveScene().buildIndex + 2; // use this instead
+                    PlayerPrefs.SetInt("Last_Level", levelIndex);
+                    PlayerPrefs.Save();
+                    SceneManager.LoadScene("Main 1");
                     break;
             }
-        }
-    }
-
-    void flashTheText()
-    {
-        if (flashText.activeInHierarchy)
-            flashText.SetActive(false);
-        else
-            flashText.SetActive(true);
-    }
-
-    void Play()
-    {
-        if (!PlayerPrefs.HasKey("isFirstTime") || PlayerPrefs.GetInt("isFirstTime") != 1)
-        {
-            SceneManager.LoadScene("Setup");
-            // Now set the value of isFirstTime to be false in the PlayerPrefs.
-            PlayerPrefs.SetInt("isFirstTime", 1);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            SceneManager.LoadScene(levelIndex);
         }
     }
 }
