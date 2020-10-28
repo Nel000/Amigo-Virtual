@@ -12,12 +12,12 @@ public class FriendMovement : MonoBehaviour
         var x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * 5.0f;
         transform.position += Vector3.forward * Time.deltaTime * forwardForce;
 
-        if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(x, 0, 0);
         }
 
-        if (Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(x, 0, 0);
         }

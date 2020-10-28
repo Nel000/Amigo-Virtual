@@ -320,6 +320,11 @@ PrefabInstance:
       propertyPath: hungerBar
       value: 
       objectReference: {fileID: 1322439846}
+    - target: {fileID: 3763169627669372865, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9e6304062174ac144b696d7d5155a7c3, type: 2}
     - target: {fileID: 6535696226842653371, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
       propertyPath: m_LocalPosition.x
