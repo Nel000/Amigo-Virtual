@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Friend : MonoBehaviour
 {
@@ -93,6 +94,11 @@ public class Friend : MonoBehaviour
         energy = Mathf.Clamp(
             energy - subtractEnergy * Time.deltaTime, minValue, maxValue);
         energyBar.SetHealth(energy);
+
+        if (hunger <= 0 || energy <= 0)
+        {
+            GameOver();
+        }
     }
 
     void UpdateStatus()
@@ -292,5 +298,11 @@ public class Friend : MonoBehaviour
             friendAnim.SetTrigger("Hungry");
         else
             friendAnim.SetTrigger("Normal");
+    }
+
+    public void GameOver()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("GameOver");
     }
 }
