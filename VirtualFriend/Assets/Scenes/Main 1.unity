@@ -340,6 +340,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1679914252979367449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &565542357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1679914253106100579, guid: e18c621bee7b8524ba3b79f5e2e37b01,
+    type: 3}
+  m_PrefabInstance: {fileID: 1679914252979367449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 565542357}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1153929592
@@ -739,7 +745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1210329171
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1006,6 +1012,10 @@ PrefabInstance:
     - target: {fileID: 734837247, guid: e18c621bee7b8524ba3b79f5e2e37b01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210329171, guid: e18c621bee7b8524ba3b79f5e2e37b01, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1594872023, guid: e18c621bee7b8524ba3b79f5e2e37b01, type: 3}
       propertyPath: m_Sprite
@@ -1381,6 +1391,26 @@ PrefabInstance:
       propertyPath: energyBar
       value: 
       objectReference: {fileID: 1890131249}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: subtractHunger
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: subtractHappiness
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: subtractCleanliness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: subtractEnergy
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6535696226842653371, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
       propertyPath: m_LocalPosition.x
