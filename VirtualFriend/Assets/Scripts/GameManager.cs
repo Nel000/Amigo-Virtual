@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     private bool isHeadOn;
 
+    int head;
+
     private void Start()
     {
         /*if (!PlayerPrefs.HasKey("looks"))
@@ -29,6 +31,13 @@ public class GameManager : MonoBehaviour
 
         Cursor.visible = true;
         //Cursor.lockState = CursorLockMode.None;
+
+        PlayerPrefs.GetInt("head");
+
+        if (PlayerPrefs.HasKey("head"))
+        {
+            customizationItems[0].SetActive(true);
+        }
     }
 
     private void Update()
@@ -96,10 +105,14 @@ public class GameManager : MonoBehaviour
             case (0):
                 customizationItems[0].SetActive(true);
                 isHeadOn = true;
+                head = 1;
+                PlayerPrefs.SetInt("head", head);
                 break;
             case (1):
                 customizationItems[0].SetActive(false);
                 isHeadOn = false;
+                head = 0;
+                PlayerPrefs.DeleteKey("head");
                 break;
             case (2):
 
