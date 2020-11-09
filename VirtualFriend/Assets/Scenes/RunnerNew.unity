@@ -4147,6 +4147,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FriendRunner
       objectReference: {fileID: 0}
+    - target: {fileID: 4034994313812201806, guid: 20503772b9d5b474ea00a6a6678ab020,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4962615930390581875, guid: 20503772b9d5b474ea00a6a6678ab020,
         type: 3}
       propertyPath: hungerBar
@@ -4322,6 +4327,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 455628, guid: a7817dc9ad2423344b2e740174f38c36,
     type: 3}
   m_PrefabInstance: {fileID: 1738156789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1613432909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4034994313812201806, guid: 20503772b9d5b474ea00a6a6678ab020,
+    type: 3}
+  m_PrefabInstance: {fileID: 1507552728}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1629605096
 PrefabInstance:
@@ -5205,6 +5216,11 @@ PrefabInstance:
       propertyPath: friend
       value: 
       objectReference: {fileID: 45334928}
+    - target: {fileID: 7950836890202208272, guid: 72969bee910a9eb4080e9bbf474248c7,
+        type: 3}
+      propertyPath: hat
+      value: 
+      objectReference: {fileID: 1613432909}
     - target: {fileID: 7950836890202208273, guid: 72969bee910a9eb4080e9bbf474248c7,
         type: 3}
       propertyPath: m_Name
