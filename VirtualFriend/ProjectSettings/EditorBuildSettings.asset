@@ -21,8 +21,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Runner.unity
     guid: 9ac523689c01dfe4695b13f3ba3c299f
   - enabled: 1
+    path: Assets/Scenes/RunnerNew.unity
+    guid: a45e0d8e4c208b44da630a091c10c260
+  - enabled: 1
     path: Assets/Scenes/Runner 1.unity
     guid: 994b4df156a28b749b54bfc60511a157
+  - enabled: 1
+    path: Assets/Scenes/RunnerNew 1.unity
+    guid: d3b2383e5b4f3d346840fec7769f0682
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: a8ee5927aeab7864a82c27b3d8a5d862

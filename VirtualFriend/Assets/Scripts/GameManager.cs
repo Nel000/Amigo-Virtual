@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
                 friendPanel.SetActive(!friendPanel.activeInHierarchy);
                 break;
             case (1):
-                SceneManager.LoadScene("Runner");
+                SceneManager.LoadScene("RunnerNew");
                 friend.GetComponent<Friend>().SaveFriend();
                 break;
             case (2):

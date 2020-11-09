@@ -9,7 +9,7 @@ public class FriendMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * 5.0f;
+        var x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * 3.5f;
         transform.position += Vector3.forward * Time.deltaTime * forwardForce;
 
         if (Input.GetKey(KeyCode.LeftArrow))

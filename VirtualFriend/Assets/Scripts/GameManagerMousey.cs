@@ -76,7 +76,7 @@ public class GameManagerMousey : MonoBehaviour
                 friendPanel.SetActive(!friendPanel.activeInHierarchy);
                 break;
             case (1):
-                SceneManager.LoadScene("Runner 1");
+                SceneManager.LoadScene("RunnerNew 1");
                 friend.GetComponent<Friend>().SaveFriend();
                 break;
             case (2):
