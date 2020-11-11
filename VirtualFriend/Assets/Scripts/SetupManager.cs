@@ -23,8 +23,8 @@ public class SetupManager : MonoBehaviour
     {
         selectedOption = 1;
 
-        option1.color = new Color32(255, 255, 255, 255);
-        option2.color = new Color32(0, 0, 0, 255);
+        option1.color = new Color32(66, 174, 238, 255);
+        option2.color = new Color32(255, 140, 0, 255);
 
         if (!loaded)
         {
@@ -44,16 +44,16 @@ public class SetupManager : MonoBehaviour
                 selectedOption = 1;
             }
 
-            option1.color = new Color32(0, 0, 0, 255);
-            option2.color = new Color32(0, 0, 0, 255);
+            option1.color = new Color32(255, 140, 0, 255);
+            option2.color = new Color32(255, 140, 0, 255);
 
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    option1.color = new Color32(255, 255, 255, 255);
+                    option1.color = new Color32(66, 174, 238, 255);
                     break;
                 case 2:
-                    option2.color = new Color32(255, 255, 255, 255);
+                    option2.color = new Color32(66, 174, 238, 255);
                     break;
             }
         }
@@ -66,16 +66,16 @@ public class SetupManager : MonoBehaviour
                 selectedOption = numOfOptions;
             }
 
-            option1.color = new Color32(0, 0, 0, 255); //Make sure all others will be black (or do any visual you want to use to indicate this)
-            option2.color = new Color32(0, 0, 0, 255);
+            option1.color = new Color32(255, 140, 0, 255); //Make sure all others will be black (or do any visual you want to use to indicate this)
+            option2.color = new Color32(255, 140, 0, 255);
 
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    option1.color = new Color32(255, 255, 255, 255);
+                    option1.color = new Color32(66, 174, 238, 255);
                     break;
                 case 2:
-                    option2.color = new Color32(255, 255, 255, 255);
+                    option2.color = new Color32(66, 174, 238, 255);
                     break;
             }
         }
