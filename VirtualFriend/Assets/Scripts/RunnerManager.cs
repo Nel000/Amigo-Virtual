@@ -20,14 +20,5 @@ public class RunnerManager : MonoBehaviour
         {
             hat.SetActive(true);
         }
-
-        StartCoroutine(loadSceneAfterDelay(15));
-    }
-
-    IEnumerator loadSceneAfterDelay(float waitBySecs)
-    {
-        yield return new WaitForSeconds(waitBySecs);
-        SceneManager.LoadScene("Main");
-        friend.GetComponent<Friend>().SaveFriend();
     }
 }
