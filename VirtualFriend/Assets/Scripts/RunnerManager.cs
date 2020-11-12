@@ -21,7 +21,7 @@ public class RunnerManager : MonoBehaviour
             hat.SetActive(true);
         }
 
-        StartCoroutine(loadSceneAfterDelay(7));
+        StartCoroutine(loadSceneAfterDelay(15));
     }
 
     IEnumerator loadSceneAfterDelay(float waitBySecs)
