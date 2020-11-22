@@ -86,6 +86,7 @@ public class GameManagerMousey : MonoBehaviour
 
                 break;
             case (4):
+                friend.GetComponent<Friend>().UpdateEnergy(100);
                 friend.GetComponent<Friend>().SaveFriend();
                 Application.Quit();
                 Debug.Log("EXIT");

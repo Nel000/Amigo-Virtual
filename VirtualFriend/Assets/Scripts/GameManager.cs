@@ -80,12 +80,13 @@ public class GameManager : MonoBehaviour
                 friend.GetComponent<Friend>().SaveFriend();
                 break;
             case (2):
-
+                
                 break;
             case (3):
 
                 break;
             case (4):
+                friend.GetComponent<Friend>().UpdateEnergy(100);
                 friend.GetComponent<Friend>().SaveFriend();
                 Application.Quit();
                 Debug.Log("EXIT");
