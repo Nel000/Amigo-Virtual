@@ -23,10 +23,14 @@ public class Friend : MonoBehaviour
     public GameObject topButtonOn;
     public GameObject topButtonOff;
 
+    public GameObject pizza;
+
     public float subtractHunger = -5;
     public float subtractHappiness = -5;
     public float subtractCleanliness = -5;
     public float subtractEnergy = -5;
+
+    public bool isHungryLow;
 
     private bool serverTime;
     private int clickCount;
@@ -98,6 +102,14 @@ public class Friend : MonoBehaviour
         if (hunger <= 0 || energy <= 0)
         {
             GameOver();
+        }
+
+        if (Input.GetKeyDown("j") && isHungryLow == true)
+        {
+            Debug.Log("Feed");
+            UpdateHunger(100);
+            pizza.SetActive(false);
+            isHungryLow = false;
         }
     }
 
@@ -298,6 +310,15 @@ public class Friend : MonoBehaviour
             friendAnim.SetTrigger("Hungry");
         else
             friendAnim.SetTrigger("Normal");
+    }
+
+    public void RequestFood()
+    {
+        if (hunger < 80)
+        {
+            pizza.SetActive(true);
+            isHungryLow = true;
+        }
     }
 
     public void GameOver()

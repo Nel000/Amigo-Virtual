@@ -80,7 +80,7 @@ public class GameManagerMousey : MonoBehaviour
                 friend.GetComponent<Friend>().SaveFriend();
                 break;
             case (2):
-
+                friend.GetComponent<Friend>().RequestFood();
                 break;
             case (3):
 
