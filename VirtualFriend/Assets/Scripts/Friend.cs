@@ -23,14 +23,19 @@ public class Friend : MonoBehaviour
     public GameObject topButtonOn;
     public GameObject topButtonOff;
 
+    private GameObject randomImage;
+    //public GameObject balloon;
     public GameObject pizza;
+    public GameObject hamburger;
+    public GameObject[] images;
 
     public float subtractHunger = -5;
     public float subtractHappiness = -5;
     public float subtractCleanliness = -5;
     public float subtractEnergy = -5;
 
-    public bool isHungryLow;
+    public bool isHungry;
+    public bool isHungryLowMed;
 
     private bool serverTime;
     private int clickCount;
@@ -104,13 +109,26 @@ public class Friend : MonoBehaviour
             GameOver();
         }
 
-        if (Input.GetKeyDown("j") && isHungryLow == true)
+        if (isHungry == true)
         {
-            Debug.Log("Feed");
-            UpdateHunger(100);
-            pizza.SetActive(false);
-            isHungryLow = false;
-        }
+            if (Input.GetKeyDown("j") && pizza.activeSelf == true)
+            {
+                Debug.Log("Feed");
+                UpdateHunger(100);
+                randomImage.SetActive(false);
+                //balloon.SetActive(false);
+                //pizza.SetActive(false);
+                isHungry = false;
+            }
+
+            if (Input.GetKeyDown("k") && hamburger.activeSelf == true)
+            {
+                Debug.Log("Feed");
+                UpdateHunger(100);
+                randomImage.SetActive(false);
+                isHungry = false;
+            }
+        }       
     }
 
     void UpdateStatus()
@@ -314,11 +332,34 @@ public class Friend : MonoBehaviour
 
     public void RequestFood()
     {
-        if (hunger < 80)
+        if (hunger < 100 && isHungry == false)
         {
-            pizza.SetActive(true);
-            isHungryLow = true;
+            int num = UnityEngine.Random.Range(0, images.Length);
+            randomImage = images[num];
+            randomImage.SetActive(true);
+            //balloon.SetActive(true);
+            //pizza.SetActive(true);
+            isHungry = true;
         }
+        /*else
+        {
+            balloon.SetActive(false);
+            pizza.SetActive(false);
+            isHungryLow = false;
+        }*/
+
+        /*if (hunger < 60 && hunger > 40)
+        {
+            balloon.SetActive(true);
+            hamburger.SetActive(true);
+            isHungryLowMed = true;
+        }
+        else
+        {
+            balloon.SetActive(false);
+            hamburger.SetActive(false);
+            isHungryLowMed = false;
+        }*/
     }
 
     public void GameOver()
