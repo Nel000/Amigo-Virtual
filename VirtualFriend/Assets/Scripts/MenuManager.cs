@@ -8,8 +8,9 @@ public class MenuManager : MonoBehaviour
 
     public Text play;
     public Text reset;
+    public Image exit;
 
-    private int numOfOptions = 2;
+    private int numOfOptions = 3;
 
     private int selectedOption;
 
@@ -23,6 +24,7 @@ public class MenuManager : MonoBehaviour
         selectedOption = 1;
         play.color = new Color32(255, 255, 255, 255);
         reset.color = new Color32(0, 0, 0, 255);
+        exit.color = new Color32(255, 255, 255, 70);
 
         InvokeRepeating("flashTheText", 0f, 0.5f);
 
@@ -48,6 +50,7 @@ public class MenuManager : MonoBehaviour
 
             play.color = new Color32(0, 0, 0, 255);
             reset.color = new Color32(0, 0, 0, 255);
+            exit.color = new Color32(255, 255, 255, 70);
 
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
@@ -56,6 +59,9 @@ public class MenuManager : MonoBehaviour
                     break;
                 case 2:
                     reset.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 3:
+                    exit.color = new Color32(255, 255, 255, 200);
                     break;
             }
         }
@@ -70,7 +76,7 @@ public class MenuManager : MonoBehaviour
 
             play.color = new Color32(0, 0, 0, 255); //Make sure all others will be black (or do any visual you want to use to indicate this)
             reset.color = new Color32(0, 0, 0, 255);
-
+            exit.color = new Color32(255, 255, 255, 70);
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
@@ -78,6 +84,9 @@ public class MenuManager : MonoBehaviour
                     break;
                 case 2:
                     reset.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 3:
+                    exit.color = new Color32(255, 255, 255, 200);
                     break;
             }
         }
@@ -94,6 +103,10 @@ public class MenuManager : MonoBehaviour
                 case 2:
                     PlayerPrefs.DeleteAll();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    break;
+                case 3:
+                    Debug.Log("Exit");
+                    Application.Quit();
                     break;
             }
         }
