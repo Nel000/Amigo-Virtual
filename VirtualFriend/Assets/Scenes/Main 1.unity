@@ -449,6 +449,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1679914252979367449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &822834079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 822834079, guid: e18c621bee7b8524ba3b79f5e2e37b01,
+    type: 3}
+  m_PrefabInstance: {fileID: 1679914252979367449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &835155647 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1679914253755357350, guid: e18c621bee7b8524ba3b79f5e2e37b01,
@@ -701,6 +707,7 @@ MonoBehaviour:
   friendList: []
   customizationItems:
   - {fileID: 1810591010}
+  - {fileID: 1549531221}
 --- !u!4 &1494646082
 Transform:
   m_ObjectHideFlags: 0
@@ -715,6 +722,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1528779828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1528779828, guid: e18c621bee7b8524ba3b79f5e2e37b01,
+    type: 3}
+  m_PrefabInstance: {fileID: 1679914252979367449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1549531221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7847571620737381929, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 2290575027125312206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1810591010 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7847571621821330735, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
@@ -780,7 +799,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1494646081}
+    - target: {fileID: 822834081, guid: e18c621bee7b8524ba3b79f5e2e37b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1494646081}
     - target: {fileID: 1210329172, guid: e18c621bee7b8524ba3b79f5e2e37b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1494646081}
+    - target: {fileID: 1528779830, guid: e18c621bee7b8524ba3b79f5e2e37b01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1494646081}
@@ -962,11 +989,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
-      propertyPath: images.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
       propertyPath: topButtonOn
       value: 
       objectReference: {fileID: 42181143}
@@ -975,6 +997,36 @@ PrefabInstance:
       propertyPath: topButtonOff
       value: 
       objectReference: {fileID: 1415097160}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: eyeButtonOn
+      value: 
+      objectReference: {fileID: 822834079}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: eyeButtonOff
+      value: 
+      objectReference: {fileID: 1528779828}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: pizza
+      value: 
+      objectReference: {fileID: 1901704623}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: hamburger
+      value: 
+      objectReference: {fileID: 733457329}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: images.Array.data[0]
+      value: 
+      objectReference: {fileID: 1901704623}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: images.Array.data[1]
+      value: 
+      objectReference: {fileID: 733457329}
     - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
       propertyPath: hungerBar
@@ -995,51 +1047,6 @@ PrefabInstance:
       propertyPath: energyBar
       value: 
       objectReference: {fileID: 1890131249}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
-      propertyPath: subtractHunger
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
-      propertyPath: subtractHappiness
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
-      propertyPath: subtractCleanliness
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
-      propertyPath: subtractEnergy
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
-      propertyPath: pizza
-      value: 
-      objectReference: {fileID: 1901704623}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
-      propertyPath: balloon
-      value: 
-      objectReference: {fileID: 1901704623}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
-      propertyPath: hamburger
-      value: 
-      objectReference: {fileID: 733457329}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
-      propertyPath: images.Array.data[1]
-      value: 
-      objectReference: {fileID: 733457329}
-    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
-        type: 3}
-      propertyPath: images.Array.data[0]
-      value: 
-      objectReference: {fileID: 1901704623}
     - target: {fileID: 6535696226842653371, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
       propertyPath: m_LocalPosition.x

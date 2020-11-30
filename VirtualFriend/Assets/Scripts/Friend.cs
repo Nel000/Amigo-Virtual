@@ -16,12 +16,14 @@ public class Friend : MonoBehaviour
     [SerializeField]
     private float energy;
     [SerializeField]
-    public float top;
+    public float custom;
     [SerializeField]
     private string sName;
 
     public GameObject topButtonOn;
     public GameObject topButtonOff;
+    public GameObject eyeButtonOn;
+    public GameObject eyeButtonOff;
 
     private GameObject randomImage;
     //public GameObject balloon;
@@ -170,14 +172,14 @@ public class Friend : MonoBehaviour
         {
             energy = PlayerPrefs.GetFloat("energy");
         }
-        if (!PlayerPrefs.HasKey("top"))
+        if (!PlayerPrefs.HasKey("custom"))
         {
-            top = 100;
-            PlayerPrefs.SetFloat("hat", top);
+            custom = 100;
+            PlayerPrefs.SetFloat("custom", custom);
         }
         else
         {
-            top = PlayerPrefs.GetFloat("top");
+            custom = PlayerPrefs.GetFloat("custom");
         }
 
         /*if (!PlayerPrefs.HasKey("then"))
@@ -291,11 +293,11 @@ public class Friend : MonoBehaviour
             energy = 100;
     }
 
-    public void UpdateTop(int i)
+    public void UpdateCustom(int i)
     {
-        top += i;
-        if (top > 100)
-            top = 100;
+        custom += i;
+        if (custom > 100)
+            custom = 100;
     }
 
     public void SaveFriend()
@@ -306,15 +308,21 @@ public class Friend : MonoBehaviour
         PlayerPrefs.SetFloat("happiness", happiness);
         PlayerPrefs.SetFloat("cleanliness", cleanliness);
         PlayerPrefs.SetFloat("energy", energy);
-        PlayerPrefs.SetFloat("top", top);
+        PlayerPrefs.SetFloat("custom", custom);
     }
 
     public void CheckForUnlocked()
     {
-        if (top < 100)
+        if (custom < 100)
         {
             topButtonOn.SetActive(true);
             topButtonOff.SetActive(true);
+        }
+
+        if (custom < 50)
+        {
+            eyeButtonOn.SetActive(true);
+            eyeButtonOff.SetActive(true);
         }
     }
 

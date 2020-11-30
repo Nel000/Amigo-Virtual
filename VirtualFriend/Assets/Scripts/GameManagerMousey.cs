@@ -20,8 +20,10 @@ public class GameManagerMousey : MonoBehaviour
     public GameObject[] customizationItems;
 
     private bool isHeadOn;
+    private bool isEyesOn;
 
     int head;
+    int eyes;
 
     private void Start()
     {
@@ -37,6 +39,13 @@ public class GameManagerMousey : MonoBehaviour
         if (PlayerPrefs.HasKey("head"))
         {
             customizationItems[0].SetActive(true);
+        }
+
+        PlayerPrefs.GetInt("eyes");
+
+        if (PlayerPrefs.HasKey("eyes"))
+        {
+            customizationItems[1].SetActive(true);
         }
     }
 
@@ -118,10 +127,16 @@ public class GameManagerMousey : MonoBehaviour
                 PlayerPrefs.DeleteKey("head");
                 break;
             case (2):
-
+                customizationItems[1].SetActive(true);
+                isEyesOn = true;
+                eyes = 1;
+                PlayerPrefs.SetInt("eyes", eyes);
                 break;
             case (3):
-
+                customizationItems[1].SetActive(false);
+                isEyesOn = false;
+                eyes = 0;
+                PlayerPrefs.DeleteKey("eyes");
                 break;
             case (4):
 

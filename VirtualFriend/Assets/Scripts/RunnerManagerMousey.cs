@@ -8,6 +8,7 @@ public class RunnerManagerMousey : MonoBehaviour
     public Canvas canvas;
 
     public GameObject hat;
+    public GameObject eyes;
 
     private void Start()
     {
@@ -15,10 +16,16 @@ public class RunnerManagerMousey : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
 
         PlayerPrefs.GetInt("head");
+        PlayerPrefs.GetInt("eyes");
 
         if (PlayerPrefs.HasKey("head"))
         {
             hat.SetActive(true);
+        }
+
+        if (PlayerPrefs.HasKey("eyes"))
+        {
+            eyes.SetActive(true);
         }
     }
 }
