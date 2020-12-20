@@ -1156,6 +1156,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunnerManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9034549104282296842, guid: ce8a27cb416477346b9b08aa22c3f43d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9034549104282296843, guid: ce8a27cb416477346b9b08aa22c3f43d,
         type: 3}
       propertyPath: friend

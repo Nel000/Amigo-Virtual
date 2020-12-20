@@ -1251,6 +1251,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6537160389489752865, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160389489752865, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160389489752865, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160389489752866, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6537160389798083165, guid: 04b357d3d76ec7946b7178ff95b1de4f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1310,6 +1330,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Balloons
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160390635120340, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160390635120347, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160390718575761, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160390938486051, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160390938486051, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160390938486051, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160390938486076, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04b357d3d76ec7946b7178ff95b1de4f, type: 3}

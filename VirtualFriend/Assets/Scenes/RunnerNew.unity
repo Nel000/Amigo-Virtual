@@ -4973,6 +4973,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunnerManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7950836890202208273, guid: 72969bee910a9eb4080e9bbf474248c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7950836890202208279, guid: 72969bee910a9eb4080e9bbf474248c7,
         type: 3}
       propertyPath: m_LocalPosition.x

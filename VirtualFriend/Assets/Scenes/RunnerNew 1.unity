@@ -976,6 +976,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouseyRunner
       objectReference: {fileID: 0}
+    - target: {fileID: 9213182474600333058, guid: 6cf1e211572bffb4da5b2eced759e233,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9213182474613901957, guid: 6cf1e211572bffb4da5b2eced759e233,
         type: 3}
       propertyPath: m_IsActive
@@ -1690,6 +1695,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunnerManagerMousey
       objectReference: {fileID: 0}
+    - target: {fileID: 9034549104282296842, guid: ce8a27cb416477346b9b08aa22c3f43d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9034549104282296843, guid: ce8a27cb416477346b9b08aa22c3f43d,
         type: 3}
       propertyPath: friend
@@ -2135,11 +2145,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasRunner
-      objectReference: {fileID: 0}
-    - target: {fileID: 831993788130922556, guid: ce77ef26280189a4d8d9aa5568c95953,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 831993788130922688, guid: ce77ef26280189a4d8d9aa5568c95953,
         type: 3}
