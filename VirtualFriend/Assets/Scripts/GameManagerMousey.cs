@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,8 @@ public class GameManagerMousey : MonoBehaviour
     public GameObject[] friendList;
 
     public GameObject[] customizationItems;
+
+    public Animator transition;
 
     private bool isHeadOn;
     private bool isEyesOn;
@@ -85,8 +88,10 @@ public class GameManagerMousey : MonoBehaviour
                 friendPanel.SetActive(!friendPanel.activeInHierarchy);
                 break;
             case (1):
-                SceneManager.LoadScene("RunnerNew 1");
-                friend.GetComponent<Friend>().SaveFriend();
+                StartCoroutine(transitionAfterDelay());
+                transition.SetTrigger("TriggerTransition");
+                //SceneManager.LoadScene("RunnerNew 1");
+                //friend.GetComponent<Friend>().SaveFriend();
                 break;
             case (2):
                 friend.GetComponent<Friend>().RequestFood();
@@ -162,5 +167,12 @@ public class GameManagerMousey : MonoBehaviour
     {
         if (g.activeInHierarchy)
             g.SetActive(false);
+    }
+
+    IEnumerator transitionAfterDelay()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("RunnerNew 1");
+        friend.GetComponent<Friend>().SaveFriend();
     }
 }

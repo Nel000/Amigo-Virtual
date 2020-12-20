@@ -14,7 +14,7 @@ public class TransitionKoala : MonoBehaviour
     {
         animator = GameObject.Find("Transition").GetComponent<Animator>();
 
-        StartCoroutine(loadSceneAfterDelay(15));
+        StartCoroutine(loadSceneAfterDelay(12));
     }
 
     void Update()

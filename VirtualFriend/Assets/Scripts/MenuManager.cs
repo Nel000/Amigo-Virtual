@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class MenuManager : MonoBehaviour
     public Text play;
     public Text reset;
     public Image exit;
+
+    public Animator transition;
 
     private int numOfOptions = 3;
 
@@ -131,7 +134,15 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(levelIndex);
+            StartCoroutine(transitionAfterDelay());
+            transition.SetTrigger("TriggerTransition");
+            //SceneManager.LoadScene(levelIndex);
         }
+    }
+
+    IEnumerator transitionAfterDelay()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(levelIndex);
     }
 }

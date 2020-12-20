@@ -896,6 +896,26 @@ PrefabInstance:
       propertyPath: energyBar
       value: 
       objectReference: {fileID: 2136917872}
+    - target: {fileID: 935096927853599278, guid: 6cf1e211572bffb4da5b2eced759e233,
+        type: 3}
+      propertyPath: subtractHunger
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 935096927853599278, guid: 6cf1e211572bffb4da5b2eced759e233,
+        type: 3}
+      propertyPath: subtractHappiness
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 935096927853599278, guid: 6cf1e211572bffb4da5b2eced759e233,
+        type: 3}
+      propertyPath: subtractCleanliness
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 935096927853599278, guid: 6cf1e211572bffb4da5b2eced759e233,
+        type: 3}
+      propertyPath: subtractEnergy
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1383696258165092564, guid: 6cf1e211572bffb4da5b2eced759e233,
         type: 3}
       propertyPath: forwardForce

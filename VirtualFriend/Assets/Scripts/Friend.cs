@@ -328,27 +328,27 @@ public class Friend : MonoBehaviour
 
     public void CheckStatus()
     {
-        if (energy < 80)
+        if (energy < 40)
         {
             friendAnim.SetBool("Tired", true);
         }
-        else if (energy > 80)
+        else if (energy > 40)
         {
             friendAnim.SetBool("Tired", false);
         }
-        if (happiness < 80)
+        if (happiness < 40)
         {
             friendAnim.SetBool("Sad", true);
         }
-        else if (happiness > 80)
+        else if (happiness > 40)
         {
             friendAnim.SetBool("Sad", false);
         }
-        if (hunger < 80)         
+        if (hunger < 40)         
         {
             friendAnim.SetBool("Hungry", true);
         }
-        else if (hunger > 80)
+        else if (hunger > 40)
         {
             friendAnim.SetBool("Hungry", false);
         }        

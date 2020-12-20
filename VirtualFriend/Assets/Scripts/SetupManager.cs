@@ -9,6 +9,8 @@ public class SetupManager : MonoBehaviour
     public Image option1;
     public Image option2;
 
+    public Animator transition;
+
     private int numOfOptions = 2;
 
     private int selectedOption;
@@ -87,18 +89,40 @@ public class SetupManager : MonoBehaviour
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    levelIndex = SceneManager.GetActiveScene().buildIndex + 1; // use this instead
+                    StartCoroutine(transitionAfterDelay1());
+                    transition.SetTrigger("TriggerTransition");
+                    /*levelIndex = SceneManager.GetActiveScene().buildIndex + 1; // use this instead
                     PlayerPrefs.SetInt("Last_Level", levelIndex);
                     PlayerPrefs.Save();
-                    SceneManager.LoadScene("Main");
+                    SceneManager.LoadScene("Main");*/
                     break;
                 case 2:
-                    levelIndex = SceneManager.GetActiveScene().buildIndex + 2; // use this instead
+                    StartCoroutine(transitionAfterDelay2());
+                    transition.SetTrigger("TriggerTransition");
+                    /*levelIndex = SceneManager.GetActiveScene().buildIndex + 2; // use this instead
                     PlayerPrefs.SetInt("Last_Level", levelIndex);
                     PlayerPrefs.Save();
-                    SceneManager.LoadScene("Main 1");
+                    SceneManager.LoadScene("Main 1");*/
                     break;
             }
         }
+    }
+
+    IEnumerator transitionAfterDelay1()
+    {
+        yield return new WaitForSeconds(1);
+        levelIndex = SceneManager.GetActiveScene().buildIndex + 1; // use this instead
+        PlayerPrefs.SetInt("Last_Level", levelIndex);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Main");
+    }
+
+    IEnumerator transitionAfterDelay2()
+    {
+        yield return new WaitForSeconds(1);
+        levelIndex = SceneManager.GetActiveScene().buildIndex + 2; // use this instead
+        PlayerPrefs.SetInt("Last_Level", levelIndex);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Main 1");
     }
 }

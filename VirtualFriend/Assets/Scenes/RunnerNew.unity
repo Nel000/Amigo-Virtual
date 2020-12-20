@@ -3765,22 +3765,22 @@ PrefabInstance:
     - target: {fileID: 4962615930390581875, guid: 20503772b9d5b474ea00a6a6678ab020,
         type: 3}
       propertyPath: subtractHunger
-      value: 0.3
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 4962615930390581875, guid: 20503772b9d5b474ea00a6a6678ab020,
         type: 3}
       propertyPath: subtractHappiness
-      value: 0.4
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4962615930390581875, guid: 20503772b9d5b474ea00a6a6678ab020,
         type: 3}
       propertyPath: subtractCleanliness
-      value: 0.2
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4962615930390581875, guid: 20503772b9d5b474ea00a6a6678ab020,
         type: 3}
       propertyPath: subtractEnergy
-      value: 0.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7732453922780798657, guid: 20503772b9d5b474ea00a6a6678ab020,
         type: 3}
