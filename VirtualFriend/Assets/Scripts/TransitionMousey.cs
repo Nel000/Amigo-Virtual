@@ -14,7 +14,7 @@ public class TransitionMousey : MonoBehaviour
     {
         animator = GameObject.Find("Transition").GetComponent<Animator>();
 
-        StartCoroutine(loadSceneAfterDelay(10));
+        //StartCoroutine(loadSceneAfterDelay(10));
     }
 
     void Update()
@@ -27,14 +27,23 @@ public class TransitionMousey : MonoBehaviour
 
     public void LoadLevel()
     {
-        StartCoroutine(DelayLoadLevel(SceneManager.GetActiveScene().buildIndex - 4));
+        //StartCoroutine(DelayLoadLevel(SceneManager.GetActiveScene().buildIndex - 2));
+        StartCoroutine(DelayLoadLevel());
     }
 
-    IEnumerator DelayLoadLevel(int index)
+    IEnumerator DelayLoadLevel()
     {
         animator.SetTrigger("TriggerTransition");
         yield return new WaitForSeconds(transitionDelayTime);
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene("Main 1");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(loadSceneAfterDelay(1));
+        }
     }
 
     IEnumerator loadSceneAfterDelay(float waitBySecs)

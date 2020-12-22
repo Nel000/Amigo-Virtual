@@ -695,6 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6da343b0301d346b0920fef69f0ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  friendUnlock: {fileID: 239435594}
   happinessText: {fileID: 1905181111}
   hungerText: {fileID: 919910891}
   cleanlinessText: {fileID: 1052912220}
@@ -788,6 +789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034549104282296842, guid: ce8a27cb416477346b9b08aa22c3f43d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9034549104282296844, guid: ce8a27cb416477346b9b08aa22c3f43d,
         type: 3}

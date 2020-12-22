@@ -14,7 +14,7 @@ public class TransitionKoala : MonoBehaviour
     {
         animator = GameObject.Find("Transition").GetComponent<Animator>();
 
-        StartCoroutine(loadSceneAfterDelay(12));
+        //StartCoroutine(loadSceneAfterDelay(12));
     }
 
     void Update()
@@ -27,14 +27,22 @@ public class TransitionKoala : MonoBehaviour
 
     public void LoadLevel()
     {
-        StartCoroutine(DelayLoadLevel(SceneManager.GetActiveScene().buildIndex - 3));
+        StartCoroutine(DelayLoadLevel());
     }
 
-    IEnumerator DelayLoadLevel(int index)
+    IEnumerator DelayLoadLevel()
     {
         animator.SetTrigger("TriggerTransition");
         yield return new WaitForSeconds(transitionDelayTime);
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene("Main");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(loadSceneAfterDelay(1));
+        }
     }
 
     IEnumerator loadSceneAfterDelay(float waitBySecs)

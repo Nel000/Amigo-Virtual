@@ -1013,6 +1013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8701b6ff11a78a941b6fcf4b620fe9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  friendUnlock: {fileID: 612042769}
   happinessText: {fileID: 1905181111}
   hungerText: {fileID: 919910891}
   cleanlinessText: {fileID: 1052912220}

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerMousey : MonoBehaviour
 {
+    public Friend friendUnlock;
+
     public GameObject happinessText;
     public GameObject hungerText;
     public GameObject cleanlinessText;
@@ -172,7 +174,16 @@ public class GameManagerMousey : MonoBehaviour
     IEnumerator transitionAfterDelay()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("RunnerNew 1");
+
+        if (friendUnlock.custom == 100)
+        {
+            SceneManager.LoadScene("RunnerMousey1");
+        }
+        if (friendUnlock.custom < 100)
+        {
+            SceneManager.LoadScene("RunnerMousey2");
+        }
+
         friend.GetComponent<Friend>().SaveFriend();
     }
 }

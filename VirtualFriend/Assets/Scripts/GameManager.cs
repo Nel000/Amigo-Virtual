@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public Friend friendUnlock;
+
     public GameObject happinessText;
     public GameObject hungerText;
     public GameObject cleanlinessText;
@@ -172,7 +174,16 @@ public class GameManager : MonoBehaviour
     IEnumerator transitionAfterDelay()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("RunnerNew");
+
+        if (friendUnlock.custom == 100)
+        {
+            SceneManager.LoadScene("RunnerKoala1");
+        }
+        if (friendUnlock.custom < 100)
+        {
+            SceneManager.LoadScene("RunnerKoala2");
+        }
+
         friend.GetComponent<Friend>().SaveFriend();
     }
 }
