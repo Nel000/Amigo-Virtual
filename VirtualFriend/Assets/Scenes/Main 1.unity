@@ -1151,6 +1151,11 @@ PrefabInstance:
       propertyPath: subtractEnergy
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
+        type: 3}
+      propertyPath: minValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6535696226842653371, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -568,6 +568,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transition
       objectReference: {fileID: 0}
+    - target: {fileID: 9034549104282296842, guid: ce8a27cb416477346b9b08aa22c3f43d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9034549104282296844, guid: ce8a27cb416477346b9b08aa22c3f43d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1530,6 +1535,11 @@ PrefabInstance:
       propertyPath: eyeButtonOff
       value: 
       objectReference: {fileID: 1679914252979367450}
+    - target: {fileID: 3427786025112530753, guid: a2aae2b51655d6044a00a44b82071945,
+        type: 3}
+      propertyPath: minValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5095154622775559005, guid: a2aae2b51655d6044a00a44b82071945,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

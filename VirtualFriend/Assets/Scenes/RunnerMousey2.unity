@@ -941,6 +941,11 @@ PrefabInstance:
       propertyPath: subtractEnergy
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 935096927853599278, guid: 6cf1e211572bffb4da5b2eced759e233,
+        type: 3}
+      propertyPath: minValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1383696258165092564, guid: 6cf1e211572bffb4da5b2eced759e233,
         type: 3}
       propertyPath: forwardForce
@@ -1736,6 +1741,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 858824934, guid: ce8a27cb416477346b9b08aa22c3f43d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1035877015, guid: ce8a27cb416477346b9b08aa22c3f43d, type: 3}
       propertyPath: friend
       value: 

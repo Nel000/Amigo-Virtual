@@ -3782,6 +3782,11 @@ PrefabInstance:
       propertyPath: subtractEnergy
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4962615930390581875, guid: 20503772b9d5b474ea00a6a6678ab020,
+        type: 3}
+      propertyPath: minValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7732453922780798657, guid: 20503772b9d5b474ea00a6a6678ab020,
         type: 3}
       propertyPath: forwardForce

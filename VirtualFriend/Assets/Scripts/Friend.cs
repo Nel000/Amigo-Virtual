@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Friend : MonoBehaviour
 {
     public float maxValue = 100;
-    public float minValue = 0;
+    public float minValue = 10;
 
     [SerializeField]
     private float hunger;
@@ -106,10 +106,10 @@ public class Friend : MonoBehaviour
             energy - subtractEnergy * Time.deltaTime, minValue, maxValue);
         energyBar.SetHealth(energy);
 
-        if (hunger <= 0 || energy <= 0)
+        /*if (hunger <= 0 || energy <= 0)
         {
             GameOver();
-        }
+        }*/
 
         if (isHungry == true)
         {
@@ -343,6 +343,14 @@ public class Friend : MonoBehaviour
         else if (happiness > 40)
         {
             friendAnim.SetBool("Sad", false);
+        }
+        if (cleanliness < 40)
+        {
+            friendAnim.SetBool("Dirty", true);
+        }
+        else if (cleanliness > 40)
+        {
+            friendAnim.SetBool("Dirty", false);
         }
         if (hunger < 40)         
         {
