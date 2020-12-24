@@ -58,6 +58,8 @@ public class SetupManager : MonoBehaviour
                     option2.color = new Color32(255, 255, 255, 220);
                     break;
             }
+
+            FindObjectOfType<AudioManager>().Play("Switch");
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) /*|| Controller input*/)
@@ -80,6 +82,8 @@ public class SetupManager : MonoBehaviour
                     option2.color = new Color32(255, 255, 255, 220);
                     break;
             }
+
+            FindObjectOfType<AudioManager>().Play("Switch");
         }
 
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown("joystick button 0"))
@@ -91,6 +95,7 @@ public class SetupManager : MonoBehaviour
                 case 1:
                     StartCoroutine(transitionAfterDelay1());
                     transition.SetTrigger("TriggerTransition");
+                    FindObjectOfType<AudioManager>().Play("Click");
                     /*levelIndex = SceneManager.GetActiveScene().buildIndex + 1; // use this instead
                     PlayerPrefs.SetInt("Last_Level", levelIndex);
                     PlayerPrefs.Save();
@@ -99,6 +104,7 @@ public class SetupManager : MonoBehaviour
                 case 2:
                     StartCoroutine(transitionAfterDelay2());
                     transition.SetTrigger("TriggerTransition");
+                    FindObjectOfType<AudioManager>().Play("Click");
                     /*levelIndex = SceneManager.GetActiveScene().buildIndex + 2; // use this instead
                     PlayerPrefs.SetInt("Last_Level", levelIndex);
                     PlayerPrefs.Save();

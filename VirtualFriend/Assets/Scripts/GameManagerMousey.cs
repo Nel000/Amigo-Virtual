@@ -66,6 +66,11 @@ public class GameManagerMousey : MonoBehaviour
             "" + friend.GetComponent<Friend>().pEnergy;
         /*nameText.GetComponent<Text>().text =
             friend.GetComponent<Friend>().pName;*/
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            FindObjectOfType<AudioManager>().Play("Switch");
+        }
     }
 
     public void TriggerNamePanel(bool b)
@@ -88,24 +93,31 @@ public class GameManagerMousey : MonoBehaviour
             case (0):
             default:
                 friendPanel.SetActive(!friendPanel.activeInHierarchy);
+                FindObjectOfType<AudioManager>().Play("Click");
                 break;
             case (1):
                 StartCoroutine(transitionAfterDelay());
                 transition.SetTrigger("TriggerTransition");
+                FindObjectOfType<AudioManager>().Play("Click");
                 //SceneManager.LoadScene("RunnerNew 1");
                 //friend.GetComponent<Friend>().SaveFriend();
                 break;
             case (2):
                 friend.GetComponent<Friend>().RequestFood();
+                FindObjectOfType<AudioManager>().Play("Click");
                 break;
             case (3):
-
+                friend.GetComponent<Friend>().UpdateCleanliness(100);
+                FindObjectOfType<AudioManager>().Play("Click");
                 break;
             case (4):
-                friend.GetComponent<Friend>().UpdateEnergy(100);
-                friend.GetComponent<Friend>().SaveFriend();
-                Application.Quit();
-                Debug.Log("EXIT");
+                //friend.GetComponent<Friend>().UpdateEnergy(100);
+                //friend.GetComponent<Friend>().SaveFriend();
+                StartCoroutine(saveOnSleep());
+                transition.SetTrigger("TriggerTransition");
+                FindObjectOfType<AudioManager>().Play("Click");
+                //Application.Quit();
+                //Debug.Log("EXIT");
                 break;
             case (5):
                 //PlayerPrefs.DeleteAll();
@@ -126,29 +138,32 @@ public class GameManagerMousey : MonoBehaviour
                 isHeadOn = true;
                 head = 1;
                 PlayerPrefs.SetInt("head", head);
+                FindObjectOfType<AudioManager>().Play("Click");
                 break;
             case (1):
                 customizationItems[0].SetActive(false);
                 isHeadOn = false;
                 head = 0;
                 PlayerPrefs.DeleteKey("head");
+                FindObjectOfType<AudioManager>().Play("Click");
                 break;
             case (2):
                 customizationItems[1].SetActive(true);
                 isEyesOn = true;
                 eyes = 1;
                 PlayerPrefs.SetInt("eyes", eyes);
+                FindObjectOfType<AudioManager>().Play("Click");
                 break;
             case (3):
                 customizationItems[1].SetActive(false);
                 isEyesOn = false;
                 eyes = 0;
                 PlayerPrefs.DeleteKey("eyes");
+                FindObjectOfType<AudioManager>().Play("Click");
                 break;
             case (4):
 
                 break;
-
         }
     }
 
@@ -185,5 +200,14 @@ public class GameManagerMousey : MonoBehaviour
         }
 
         friend.GetComponent<Friend>().SaveFriend();
+    }
+
+    IEnumerator saveOnSleep()
+    {
+        yield return new WaitForSeconds(1);
+        friend.GetComponent<Friend>().UpdateEnergy(100);
+        friend.GetComponent<Friend>().SaveFriend();
+        Application.Quit();
+        Debug.Log("EXIT");
     }
 }

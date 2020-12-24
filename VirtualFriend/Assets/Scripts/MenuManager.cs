@@ -67,6 +67,8 @@ public class MenuManager : MonoBehaviour
                     exit.color = new Color32(255, 255, 255, 200);
                     break;
             }
+
+            FindObjectOfType<AudioManager>().Play("Switch");
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) /*|| Controller input*/)
@@ -92,6 +94,8 @@ public class MenuManager : MonoBehaviour
                     exit.color = new Color32(255, 255, 255, 200);
                     break;
             }
+
+            FindObjectOfType<AudioManager>().Play("Switch");
         }
 
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown("joystick button 0"))
@@ -102,14 +106,17 @@ public class MenuManager : MonoBehaviour
             {
                 case 1:
                     Play();
+                    FindObjectOfType<AudioManager>().Play("Click");
                     break;
                 case 2:
                     PlayerPrefs.DeleteAll();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    FindObjectOfType<AudioManager>().Play("Click");
                     break;
                 case 3:
-                    Debug.Log("Exit");
-                    Application.Quit();
+                    StartCoroutine(transitionToExit());
+                    transition.SetTrigger("TriggerTransition");
+                    FindObjectOfType<AudioManager>().Play("Click");
                     break;
             }
         }
@@ -144,5 +151,12 @@ public class MenuManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(levelIndex);
+    }
+
+    IEnumerator transitionToExit()
+    {
+        yield return new WaitForSeconds(1);
+        Debug.Log("Exit");
+        Application.Quit();
     }
 }

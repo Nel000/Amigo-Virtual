@@ -13,6 +13,7 @@ public class Mud : MonoBehaviour
             print("Walk on mud");
             //Destroy(gameObject);
             friend.UpdateCleanliness(-10);
+            FindObjectOfType<AudioManager>().Play("Mud");
             //friend.UpdateTop(-50);
         }
     }

@@ -12,6 +12,7 @@ public class PickUp : MonoBehaviour
         {
             print("Item picked up");
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().Play("PickUp");
             friend.UpdateHappiness(100);
             friend.UpdateCustom(-50);
         }
