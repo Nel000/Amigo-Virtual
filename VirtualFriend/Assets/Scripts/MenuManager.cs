@@ -9,11 +9,13 @@ public class MenuManager : MonoBehaviour
 
     public Text play;
     public Text reset;
-    public Image exit;
+    public Text instructions;
+    public Text quit;
+    //public Image exit;
 
     public Animator transition;
 
-    private int numOfOptions = 3;
+    private int numOfOptions = 4;
 
     private int selectedOption;
 
@@ -24,10 +26,11 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        selectedOption = 1;
+        selectedOption = 2;
         play.color = new Color32(255, 255, 255, 255);
         reset.color = new Color32(0, 0, 0, 255);
-        exit.color = new Color32(255, 255, 255, 70);
+        instructions.color = new Color32(0, 0, 0, 255);
+        quit.color = new Color32(0, 0, 0, 255);
 
         InvokeRepeating("flashTheText", 0f, 0.5f);
 
@@ -53,18 +56,22 @@ public class MenuManager : MonoBehaviour
 
             play.color = new Color32(0, 0, 0, 255);
             reset.color = new Color32(0, 0, 0, 255);
-            exit.color = new Color32(255, 255, 255, 70);
+            instructions.color = new Color32(0, 0, 0, 255);
+            quit.color = new Color32(0, 0, 0, 255);
 
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    play.color = new Color32(255, 255, 255, 255);
+                    instructions.color = new Color32(255, 255, 255, 255);
                     break;
                 case 2:
-                    reset.color = new Color32(255, 255, 255, 255);
+                    play.color = new Color32(255, 255, 255, 255);
                     break;
                 case 3:
-                    exit.color = new Color32(255, 255, 255, 200);
+                    reset.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 4:
+                    quit.color = new Color32(255, 255, 255, 255);
                     break;
             }
 
@@ -81,17 +88,21 @@ public class MenuManager : MonoBehaviour
 
             play.color = new Color32(0, 0, 0, 255); //Make sure all others will be black (or do any visual you want to use to indicate this)
             reset.color = new Color32(0, 0, 0, 255);
-            exit.color = new Color32(255, 255, 255, 70);
+            instructions.color = new Color32(0, 0, 0, 255);
+            quit.color = new Color32(0, 0, 0, 255);
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    play.color = new Color32(255, 255, 255, 255);
+                    instructions.color = new Color32(255, 255, 255, 255);
                     break;
                 case 2:
-                    reset.color = new Color32(255, 255, 255, 255);
+                    play.color = new Color32(255, 255, 255, 255);
                     break;
                 case 3:
-                    exit.color = new Color32(255, 255, 255, 200);
+                    reset.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 4:
+                    quit.color = new Color32(255, 255, 255, 255);
                     break;
             }
 
@@ -104,16 +115,20 @@ public class MenuManager : MonoBehaviour
 
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
-                case 1:
+                case 2:
                     Play();
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
-                case 2:
+                case 3:
                     PlayerPrefs.DeleteAll();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
-                case 3:
+                case 1:
+                    SceneManager.LoadScene("Instructions");
+                    FindObjectOfType<AudioManager>().Play("Click");
+                    break;
+                case 4:
                     StartCoroutine(transitionToExit());
                     transition.SetTrigger("TriggerTransition");
                     FindObjectOfType<AudioManager>().Play("Click");
