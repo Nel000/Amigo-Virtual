@@ -656,6 +656,10 @@ PrefabInstance:
       propertyPath: m_Pivot.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 332738403, guid: 2bfb5d53594489647872c564081beab5, type: 3}
+      propertyPath: m_Text
+      value: SAIR
+      objectReference: {fileID: 0}
     - target: {fileID: 533890477, guid: 2bfb5d53594489647872c564081beab5, type: 3}
       propertyPath: m_IsActive
       value: 1

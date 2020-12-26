@@ -27,8 +27,12 @@ public class Friend : MonoBehaviour
 
     private GameObject randomImage;
     //public GameObject balloon;
+    public GameObject water;
+    public GameObject juice;
+    public GameObject salad;
     public GameObject pizza;
     public GameObject hamburger;
+    public GameObject apple;
     public GameObject[] images;
 
     public float subtractHunger = -5;
@@ -38,6 +42,7 @@ public class Friend : MonoBehaviour
 
     public bool isHungry;
     public bool isHungryLowMed;
+    public bool isTired;
 
     private bool serverTime;
     private int clickCount;
@@ -90,6 +95,11 @@ public class Friend : MonoBehaviour
             }
         }
 
+        if (energy < 20)
+            isTired = true;
+        else if (energy > 20)
+            isTired = false;
+
         hunger = Mathf.Clamp(
             hunger - subtractHunger * Time.deltaTime, minValue, maxValue);
         hungerBar.SetHealth(hunger);
@@ -113,10 +123,38 @@ public class Friend : MonoBehaviour
 
         if (isHungry == true)
         {
+            if (Input.GetKeyDown("f") && water.activeSelf == true)
+            {
+                Debug.Log("Feed");
+                UpdateHunger(20);
+                UpdateHappiness(5);
+                randomImage.SetActive(false);
+                isHungry = false;
+            }
+
+            if (Input.GetKeyDown("g") && juice.activeSelf == true)
+            {
+                Debug.Log("Feed");
+                UpdateHunger(30);
+                UpdateHappiness(5);
+                randomImage.SetActive(false);
+                isHungry = false;
+            }
+
+            if (Input.GetKeyDown("h") && salad.activeSelf == true)
+            {
+                Debug.Log("Feed");
+                UpdateHunger(40);
+                UpdateHappiness(5);
+                randomImage.SetActive(false);
+                isHungry = false;
+            }
+
             if (Input.GetKeyDown("j") && pizza.activeSelf == true)
             {
                 Debug.Log("Feed");
-                UpdateHunger(100);
+                UpdateHunger(70);
+                UpdateHappiness(5);
                 randomImage.SetActive(false);
                 //balloon.SetActive(false);
                 //pizza.SetActive(false);
@@ -126,7 +164,17 @@ public class Friend : MonoBehaviour
             if (Input.GetKeyDown("k") && hamburger.activeSelf == true)
             {
                 Debug.Log("Feed");
-                UpdateHunger(100);
+                UpdateHunger(70);
+                UpdateHappiness(5);
+                randomImage.SetActive(false);
+                isHungry = false;
+            }
+
+            if (Input.GetKeyDown("l") && apple.activeSelf == true)
+            {
+                Debug.Log("Feed");
+                UpdateHunger(40);
+                UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
             }
