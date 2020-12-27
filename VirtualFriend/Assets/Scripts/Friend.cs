@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class Friend : MonoBehaviour
@@ -44,6 +45,11 @@ public class Friend : MonoBehaviour
     public bool isHungryLowMed;
     public bool isTired;
 
+    public bool tired;
+    public bool dirty;
+    public bool hungry;
+    public bool sad;
+
     private bool serverTime;
     private int clickCount;
 
@@ -53,6 +59,7 @@ public class Friend : MonoBehaviour
     public StatBar happinessBar;
     public StatBar cleanlinessBar;
     public StatBar energyBar;
+
     void Start()
     {
         //PlayerPrefs.SetString("then", "05/14/2020 09:20:12");
@@ -66,12 +73,12 @@ public class Friend : MonoBehaviour
         energyBar.SetMaxHealth(maxValue);
 
         CheckForUnlocked();
-        CheckStatus();
+        //CheckStatus();
     }
 
     void Update()
     {
-        CheckStatus();
+        CheckStatus();      
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -379,34 +386,42 @@ public class Friend : MonoBehaviour
         if (energy < 40)
         {
             friendAnim.SetBool("Tired", true);
+            tired = true;
         }
         else if (energy > 40)
         {
             friendAnim.SetBool("Tired", false);
+            tired = false;
         }
         if (happiness < 40)
         {
             friendAnim.SetBool("Sad", true);
+            sad = true;
         }
         else if (happiness > 40)
         {
             friendAnim.SetBool("Sad", false);
+            sad = false;
         }
         if (cleanliness < 40)
         {
             friendAnim.SetBool("Dirty", true);
+            dirty = true;
         }
         else if (cleanliness > 40)
         {
             friendAnim.SetBool("Dirty", false);
+            dirty = false;
         }
         if (hunger < 40)         
         {
             friendAnim.SetBool("Hungry", true);
+            hungry = true;
         }
         else if (hunger > 40)
         {
             friendAnim.SetBool("Hungry", false);
+            hungry = false;
         }        
     }
 

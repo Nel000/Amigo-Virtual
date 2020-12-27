@@ -96,10 +96,13 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("Click");
                 break;
             case (1):
-                StartCoroutine(transitionAfterDelay());
-                transition.SetTrigger("TriggerTransition");
-                FindObjectOfType<AudioManager>().Play("Click");
-                //SceneManager.LoadScene("RunnerNew");
+                if (friendUnlock.isTired == false)
+                {
+                    StartCoroutine(transitionAfterDelay());
+                    transition.SetTrigger("TriggerTransition");
+                    FindObjectOfType<AudioManager>().Play("Click");
+                }
+                //SceneManager.LoadScene("RunnerNew 1");
                 //friend.GetComponent<Friend>().SaveFriend();
                 break;
             case (2):
