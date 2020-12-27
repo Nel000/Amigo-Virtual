@@ -43,9 +43,6 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            SceneManager.LoadScene("Main");
-
         if (Input.GetKeyDown(KeyCode.RightArrow) /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption += 1;

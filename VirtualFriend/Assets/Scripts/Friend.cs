@@ -393,16 +393,6 @@ public class Friend : MonoBehaviour
             friendAnim.SetBool("Tired", false);
             tired = false;
         }
-        if (happiness < 40)
-        {
-            friendAnim.SetBool("Sad", true);
-            sad = true;
-        }
-        else if (happiness > 40)
-        {
-            friendAnim.SetBool("Sad", false);
-            sad = false;
-        }
         if (cleanliness < 40)
         {
             friendAnim.SetBool("Dirty", true);
@@ -422,7 +412,17 @@ public class Friend : MonoBehaviour
         {
             friendAnim.SetBool("Hungry", false);
             hungry = false;
-        }        
+        }
+        if (happiness < 40)
+        {
+            friendAnim.SetBool("Sad", true);
+            sad = true;
+        }
+        else if (happiness > 40)
+        {
+            friendAnim.SetBool("Sad", false);
+            sad = false;
+        }
     }
 
     public void RequestFood()
