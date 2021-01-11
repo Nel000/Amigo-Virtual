@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Friend : MonoBehaviour
 {
     public float maxValue = 100;
-    public float minValue = 10;
+    public float minValue = 5;
 
     [SerializeField]
     private float hunger;
