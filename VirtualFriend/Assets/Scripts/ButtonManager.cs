@@ -17,7 +17,11 @@ public class ButtonManager : MonoBehaviour
 
     private int numOfOptions = 4;
 
+    [SerializeField]
     private int selectedOption;
+
+    [SerializeField]
+    private bool outOfBounds;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +40,9 @@ public class ButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (selectedOption >= 1)
+            outOfBounds = false;
+
         if (Input.GetKeyDown(KeyCode.RightArrow) /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption += 1;
@@ -79,12 +86,18 @@ public class ButtonManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) /*|| Controller input*/)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && outOfBounds == true)
+        {
+            selectedOption -= 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && outOfBounds == false /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption -= 1;
             if (selectedOption < 1) //If at end of list go back to top
             {
                 selectedOption = -3;
+                outOfBounds = true;
             }
 
             feed.color = new Color32(0, 0, 0, 0);
