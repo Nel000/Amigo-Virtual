@@ -137,32 +137,44 @@ public class GameManagerMousey : MonoBehaviour
         switch (i)
         {
             case (0):
-                customizationItems[0].SetActive(true);
-                isHeadOn = true;
-                head = 1;
-                PlayerPrefs.SetInt("head", head);
-                FindObjectOfType<AudioManager>().Play("Click");
+                if (friendUnlock.hasHat == true)
+                {
+                    customizationItems[0].SetActive(true);
+                    isHeadOn = true;
+                    head = 1;
+                    PlayerPrefs.SetInt("head", head);
+                    FindObjectOfType<AudioManager>().Play("Click");
+                }               
                 break;
             case (1):
-                customizationItems[0].SetActive(false);
-                isHeadOn = false;
-                head = 0;
-                PlayerPrefs.DeleteKey("head");
-                FindObjectOfType<AudioManager>().Play("Click");
+                if (friendUnlock.hasHat == true)
+                {
+                    customizationItems[0].SetActive(false);
+                    isHeadOn = false;
+                    head = 0;
+                    PlayerPrefs.DeleteKey("head");
+                    FindObjectOfType<AudioManager>().Play("Click");
+                }                
                 break;
             case (2):
-                customizationItems[1].SetActive(true);
-                isEyesOn = true;
-                eyes = 1;
-                PlayerPrefs.SetInt("eyes", eyes);
-                FindObjectOfType<AudioManager>().Play("Click");
+                if (friendUnlock.hasGlasses == true)
+                {
+                    customizationItems[1].SetActive(true);
+                    isEyesOn = true;
+                    eyes = 1;
+                    PlayerPrefs.SetInt("eyes", eyes);
+                    FindObjectOfType<AudioManager>().Play("Click");
+                }              
                 break;
             case (3):
-                customizationItems[1].SetActive(false);
-                isEyesOn = false;
-                eyes = 0;
-                PlayerPrefs.DeleteKey("eyes");
-                FindObjectOfType<AudioManager>().Play("Click");
+                if (friendUnlock.hasGlasses == true)
+                {
+                    customizationItems[1].SetActive(false);
+                    isEyesOn = false;
+                    eyes = 0;
+                    PlayerPrefs.DeleteKey("eyes");
+                    FindObjectOfType<AudioManager>().Play("Click");
+                }              
                 break;
             case (4):
 

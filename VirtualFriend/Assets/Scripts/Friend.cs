@@ -21,6 +21,7 @@ public class Friend : MonoBehaviour
     [SerializeField]
     private string sName;
 
+    public GameObject[] customImages;
     public GameObject topButtonOn;
     public GameObject topButtonOff;
     public GameObject eyeButtonOn;
@@ -49,6 +50,9 @@ public class Friend : MonoBehaviour
     public bool dirty;
     public bool hungry;
     public bool sad;
+
+    public bool hasHat;
+    public bool hasGlasses;
 
     private bool serverTime;
     private int clickCount;
@@ -370,14 +374,20 @@ public class Friend : MonoBehaviour
     {
         if (custom < 100)
         {
-            topButtonOn.SetActive(true);
-            topButtonOff.SetActive(true);
+            //topButtonOn.SetActive(true);
+            //topButtonOff.SetActive(true);
+            hasHat = true;
+            customImages[0].SetActive(true);
+            customImages[1].SetActive(true);
         }
 
         if (custom < 50)
         {
-            eyeButtonOn.SetActive(true);
-            eyeButtonOff.SetActive(true);
+            //eyeButtonOn.SetActive(true);
+            //eyeButtonOff.SetActive(true);
+            hasGlasses = true;
+            customImages[2].SetActive(true);
+            customImages[3].SetActive(true);
         }
     }
 
