@@ -645,9 +645,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 459595684, guid: 04b357d3d76ec7946b7178ff95b1de4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 459595685, guid: 04b357d3d76ec7946b7178ff95b1de4f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 707701425, guid: 04b357d3d76ec7946b7178ff95b1de4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 707701426, guid: 04b357d3d76ec7946b7178ff95b1de4f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1617,7 +1625,7 @@ PrefabInstance:
     - target: {fileID: 3427786025112530753, guid: a2aae2b51655d6044a00a44b82071945,
         type: 3}
       propertyPath: images.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3427786025112530753, guid: a2aae2b51655d6044a00a44b82071945,
         type: 3}
@@ -1683,12 +1691,12 @@ PrefabInstance:
         type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 899523335}
+      objectReference: {fileID: 899523336}
     - target: {fileID: 3427786025112530753, guid: a2aae2b51655d6044a00a44b82071945,
         type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 899523334}
+      objectReference: {fileID: 899523335}
     - target: {fileID: 3427786025112530753, guid: a2aae2b51655d6044a00a44b82071945,
         type: 3}
       propertyPath: eyeButtonOn

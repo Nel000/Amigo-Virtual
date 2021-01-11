@@ -1185,7 +1185,7 @@ PrefabInstance:
     - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
       propertyPath: images.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
@@ -1221,12 +1221,12 @@ PrefabInstance:
         type: 3}
       propertyPath: images.Array.data[0]
       value: 
-      objectReference: {fileID: 1901704623}
+      objectReference: {fileID: 6537160389048520852}
     - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
       propertyPath: images.Array.data[1]
       value: 
-      objectReference: {fileID: 733457329}
+      objectReference: {fileID: 1901704623}
     - target: {fileID: 2290575027162719620, guid: 1daa0efe7dc49b7418d21f9568ef44ac,
         type: 3}
       propertyPath: hungerBar

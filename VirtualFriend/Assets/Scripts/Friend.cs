@@ -130,7 +130,7 @@ public class Friend : MonoBehaviour
 
         if (isHungry == true)
         {
-            if (Input.GetKeyDown("f") && water.activeSelf == true)
+            if (Input.GetKeyDown("g") && water.activeSelf == true)
             {
                 Debug.Log("Feed");
                 UpdateHunger(20);
@@ -139,7 +139,7 @@ public class Friend : MonoBehaviour
                 isHungry = false;
             }
 
-            if (Input.GetKeyDown("g") && juice.activeSelf == true)
+            if (Input.GetKeyDown("h") && juice.activeSelf == true)
             {
                 Debug.Log("Feed");
                 UpdateHunger(30);
@@ -148,7 +148,7 @@ public class Friend : MonoBehaviour
                 isHungry = false;
             }
 
-            if (Input.GetKeyDown("h") && salad.activeSelf == true)
+            if (Input.GetKeyDown("j") && salad.activeSelf == true)
             {
                 Debug.Log("Feed");
                 UpdateHunger(40);
@@ -157,7 +157,7 @@ public class Friend : MonoBehaviour
                 isHungry = false;
             }
 
-            if (Input.GetKeyDown("j") && pizza.activeSelf == true)
+            if (Input.GetKeyDown("k") && pizza.activeSelf == true)
             {
                 Debug.Log("Feed");
                 UpdateHunger(70);
@@ -168,14 +168,14 @@ public class Friend : MonoBehaviour
                 isHungry = false;
             }
 
-            if (Input.GetKeyDown("k") && hamburger.activeSelf == true)
+            /*if (Input.GetKeyDown("k") && hamburger.activeSelf == true)
             {
                 Debug.Log("Feed");
                 UpdateHunger(70);
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
-            }
+            }*/
 
             if (Input.GetKeyDown("l") && apple.activeSelf == true)
             {
