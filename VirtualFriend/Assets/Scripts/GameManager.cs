@@ -20,6 +20,29 @@ public class GameManager : MonoBehaviour
     public GameObject friendPanel;
     public GameObject[] friendList;
 
+    public Image hatOn;
+    public Image hatOff;
+    public Image glassOn;
+    public Image glassOff;
+
+    public Text feed;
+    public Text wash;
+    public Text play;
+    public Text sleep;
+
+    public GameObject pointer1;
+    public GameObject pointer2;
+    public GameObject pointer3;
+    public GameObject pointer4;
+
+    private int numOfOptions = 8;
+
+    [SerializeField]
+    private int selectedOption;
+
+    [SerializeField]
+    private bool outOfBounds;
+
     public GameObject[] customizationItems;
 
     public Animator transition;
@@ -52,6 +75,20 @@ public class GameManager : MonoBehaviour
         {
             customizationItems[1].SetActive(true);
         }
+
+        selectedOption = 5;
+
+        hatOn.color = new Color32(0, 0, 0, 20);
+        hatOff.color = new Color32(0, 0, 0, 20);
+        glassOn.color = new Color32(0, 0, 0, 20);
+        glassOff.color = new Color32(0, 0, 0, 20);
+
+        feed.color = new Color32(0, 0, 0, 255);
+        wash.color = new Color32(0, 0, 0, 0);
+        play.color = new Color32(0, 0, 0, 0);
+        sleep.color = new Color32(0, 0, 0, 0);
+
+        pointer1.SetActive(true);
     }
 
     private void Update()
@@ -69,7 +106,230 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            FindObjectOfType<AudioManager>().Play("Switch");
+            //FindObjectOfType<AudioManager>().Play("Switch");
+        }
+
+        if (selectedOption >= 5)
+            outOfBounds = false;
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) /*|| Controller input*/)
+        { //Input telling it to go up or down.
+            selectedOption += 1;
+            if (selectedOption > numOfOptions) //If at end of list go back to top
+            {
+                selectedOption = numOfOptions;
+            }
+
+            hatOn.color = new Color32(0, 0, 0, 20);
+            hatOff.color = new Color32(0, 0, 0, 20);
+            glassOn.color = new Color32(0, 0, 0, 20);
+            glassOff.color = new Color32(0, 0, 0, 20);
+
+            feed.color = new Color32(0, 0, 0, 0);
+            wash.color = new Color32(0, 0, 0, 0);
+            play.color = new Color32(0, 0, 0, 0);
+            sleep.color = new Color32(0, 0, 0, 0);
+            //custom.color = new Color32(0, 0, 0, 0);
+
+            pointer1.SetActive(false);
+            pointer2.SetActive(false);
+            pointer3.SetActive(false);
+            pointer4.SetActive(false);
+
+            switch (selectedOption) //Set the visual indicator for which option you are on.
+            {
+                /*case 1:
+                    //custom.color = new Color32(0, 0, 0, 255);
+                    break;*/
+                case 1:
+                    hatOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 2:
+                    hatOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 3:
+                    glassOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 4:
+                    glassOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 5:
+                    feed.color = new Color32(0, 0, 0, 255);
+                    pointer1.SetActive(true);
+                    break;
+                case 6:
+                    wash.color = new Color32(0, 0, 0, 255);
+                    pointer2.SetActive(true);
+                    break;
+                case 7:
+                    play.color = new Color32(0, 0, 0, 255);
+                    pointer3.SetActive(true);
+                    break;
+                case 8:
+                    sleep.color = new Color32(0, 0, 0, 255);
+                    pointer4.SetActive(true);
+                    break;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && outOfBounds == true)
+        {
+            if (selectedOption <= 1)
+                selectedOption = 1;
+            else
+                selectedOption -= 1;
+
+            hatOn.color = new Color32(0, 0, 0, 20);
+            hatOff.color = new Color32(0, 0, 0, 20);
+            glassOn.color = new Color32(0, 0, 0, 20);
+            glassOff.color = new Color32(0, 0, 0, 20);
+
+            switch (selectedOption)
+            {
+                case 1:
+                    hatOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 2:
+                    hatOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 3:
+                    glassOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 4:
+                    glassOff.color = new Color32(255, 255, 255, 255);
+                    break;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && outOfBounds == false /*|| Controller input*/)
+        { //Input telling it to go up or down.
+            selectedOption -= 1;
+            if (selectedOption < 5) //If at end of list go back to top
+            {
+                selectedOption = 1;
+                outOfBounds = true;
+            }
+
+            hatOn.color = new Color32(0, 0, 0, 20);
+            hatOff.color = new Color32(0, 0, 0, 20);
+            glassOn.color = new Color32(0, 0, 0, 20);
+            glassOff.color = new Color32(0, 0, 0, 20);
+
+            feed.color = new Color32(0, 0, 0, 0);
+            wash.color = new Color32(0, 0, 0, 0);
+            play.color = new Color32(0, 0, 0, 0);
+            sleep.color = new Color32(0, 0, 0, 0);
+            //custom.color = new Color32(0, 0, 0, 0);
+
+            pointer1.SetActive(false);
+            pointer2.SetActive(false);
+            pointer3.SetActive(false);
+            pointer4.SetActive(false);
+
+            switch (selectedOption) //Set the visual indicator for which option you are on.
+            {
+                /*case 1:
+                    //custom.color = new Color32(0, 0, 0, 255);
+                    break;*/
+                case 1:
+                    hatOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 2:
+                    hatOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 3:
+                    glassOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 4:
+                    glassOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 5:
+                    feed.color = new Color32(0, 0, 0, 255);
+                    pointer1.SetActive(true);
+                    break;
+                case 6:
+                    wash.color = new Color32(0, 0, 0, 255);
+                    pointer2.SetActive(true);
+                    break;
+                case 7:
+                    play.color = new Color32(0, 0, 0, 255);
+                    pointer3.SetActive(true);
+                    break;
+                case 8:
+                    sleep.color = new Color32(0, 0, 0, 255);
+                    pointer4.SetActive(true);
+                    break;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown("joystick button 0"))
+        {
+            Debug.Log("Picked: " + selectedOption); //For testing as the switch statment does nothing right now.
+
+            switch (selectedOption) //Set the visual indicator for which option you are on.
+            {
+                case 1:
+                    if (friendUnlock.hasHat == true)
+                    {
+                        customizationItems[0].SetActive(true);
+                        isHeadOn = true;
+                        head = 1;
+                        PlayerPrefs.SetInt("head", head);
+                        FindObjectOfType<AudioManager>().Play("Click");
+                    }
+                    break;
+                case 2:
+                    if (friendUnlock.hasHat == true)
+                    {
+                        customizationItems[0].SetActive(false);
+                        isHeadOn = false;
+                        head = 0;
+                        PlayerPrefs.DeleteKey("head");
+                        FindObjectOfType<AudioManager>().Play("Click");
+                    }
+                    break;
+                case 3:
+                    if (friendUnlock.hasGlasses == true)
+                    {
+                        customizationItems[1].SetActive(true);
+                        isEyesOn = true;
+                        eyes = 1;
+                        PlayerPrefs.SetInt("eyes", eyes);
+                        FindObjectOfType<AudioManager>().Play("Click");
+                    }
+                    break;
+                case 4:
+                    if (friendUnlock.hasGlasses == true)
+                    {
+                        customizationItems[1].SetActive(false);
+                        isEyesOn = false;
+                        eyes = 0;
+                        PlayerPrefs.DeleteKey("eyes");
+                        FindObjectOfType<AudioManager>().Play("Click");
+                    }
+                    break;
+                case 5:
+                    friend.GetComponent<Friend>().RequestFood();
+                    //FindObjectOfType<AudioManager>().Play("Click");
+                    break;
+                case 6:
+                    friend.GetComponent<Friend>().UpdateCleanliness(100);
+                    //FindObjectOfType<AudioManager>().Play("Click");
+                    break;
+                case 7:
+                    if (friendUnlock.isTired == false)
+                    {
+                        StartCoroutine(transitionAfterDelay());
+                        transition.SetTrigger("TriggerTransition");
+                        //FindObjectOfType<AudioManager>().Play("Click");
+                    }
+                    break;
+                case 8:
+                    StartCoroutine(saveOnSleep());
+                    transition.SetTrigger("TriggerTransition");
+                    //FindObjectOfType<AudioManager>().Play("Click");
+                    break;
+            }
         }
     }
 
