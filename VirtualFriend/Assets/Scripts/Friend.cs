@@ -53,6 +53,8 @@ public class Friend : MonoBehaviour
 
     public bool hasHat;
     public bool hasGlasses;
+    public bool hasMask;
+    public bool hasShoes;
 
     private bool serverTime;
     private int clickCount;
@@ -388,6 +390,20 @@ public class Friend : MonoBehaviour
             hasGlasses = true;
             customImages[2].SetActive(true);
             customImages[3].SetActive(true);
+        }
+
+        if (custom < 0)
+        {
+            hasMask = true;
+            customImages[4].SetActive(true);
+            customImages[5].SetActive(true);
+        }
+
+        if (custom < -50)
+        {
+            hasShoes = true;
+            customImages[6].SetActive(true);
+            customImages[7].SetActive(true);
         }
     }
 

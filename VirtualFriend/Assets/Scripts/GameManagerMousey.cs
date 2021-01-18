@@ -24,6 +24,10 @@ public class GameManagerMousey : MonoBehaviour
     public Image hatOff;
     public Image glassOn;
     public Image glassOff;
+    public Image maskOn;
+    public Image maskOff;
+    public Image shoesOn;
+    public Image shoesOff;
 
     public Text feed;
     public Text wash;
@@ -35,7 +39,7 @@ public class GameManagerMousey : MonoBehaviour
     public GameObject pointer3;
     public GameObject pointer4;
 
-    private int numOfOptions = 8;
+    private int numOfOptions = 12;
 
     [SerializeField]
     private int selectedOption;
@@ -49,9 +53,13 @@ public class GameManagerMousey : MonoBehaviour
 
     private bool isHeadOn;
     private bool isEyesOn;
+    private bool isMaskOn;
+    private bool isShoesOn;
 
     int head;
     int eyes;
+    int mask;
+    int shoes;
 
     private void Start()
     {
@@ -76,12 +84,30 @@ public class GameManagerMousey : MonoBehaviour
             customizationItems[1].SetActive(true);
         }
 
-        selectedOption = 5;
+        PlayerPrefs.GetInt("mask");
+
+        if (PlayerPrefs.HasKey("mask"))
+        {
+            customizationItems[2].SetActive(true);
+        }
+
+        PlayerPrefs.GetInt("shoes");
+
+        if (PlayerPrefs.HasKey("shoes"))
+        {
+            customizationItems[3].SetActive(true);
+        }
+
+        selectedOption = 9;
 
         hatOn.color = new Color32(0, 0, 0, 20);
         hatOff.color = new Color32(0, 0, 0, 20);
         glassOn.color = new Color32(0, 0, 0, 20);
         glassOff.color = new Color32(0, 0, 0, 20);
+        maskOn.color = new Color32(0, 0, 0, 20);
+        maskOff.color = new Color32(0, 0, 0, 20);
+        shoesOn.color = new Color32(0, 0, 0, 20);
+        shoesOff.color = new Color32(0, 0, 0, 20);
 
         feed.color = new Color32(0, 0, 0, 255);
         wash.color = new Color32(0, 0, 0, 0);
@@ -109,7 +135,7 @@ public class GameManagerMousey : MonoBehaviour
             //FindObjectOfType<AudioManager>().Play("Switch");
         }
 
-        if (selectedOption >= 5)
+        if (selectedOption >= 9)
             outOfBounds = false;
 
         if (Input.GetKeyDown(KeyCode.RightArrow) /*|| Controller input*/)
@@ -124,6 +150,10 @@ public class GameManagerMousey : MonoBehaviour
             hatOff.color = new Color32(0, 0, 0, 20);
             glassOn.color = new Color32(0, 0, 0, 20);
             glassOff.color = new Color32(0, 0, 0, 20);
+            maskOn.color = new Color32(0, 0, 0, 20);
+            maskOff.color = new Color32(0, 0, 0, 20);
+            shoesOn.color = new Color32(0, 0, 0, 20);
+            shoesOff.color = new Color32(0, 0, 0, 20);
 
             feed.color = new Color32(0, 0, 0, 0);
             wash.color = new Color32(0, 0, 0, 0);
@@ -154,18 +184,30 @@ public class GameManagerMousey : MonoBehaviour
                     glassOff.color = new Color32(255, 255, 255, 255);
                     break;
                 case 5:
+                    maskOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 6:
+                    maskOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 7:
+                    shoesOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 8:
+                    shoesOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 9:
                     feed.color = new Color32(0, 0, 0, 255);
                     pointer1.SetActive(true);
                     break;
-                case 6:
+                case 10:
                     wash.color = new Color32(0, 0, 0, 255);
                     pointer2.SetActive(true);
                     break;
-                case 7:
+                case 11:
                     play.color = new Color32(0, 0, 0, 255);
                     pointer3.SetActive(true);
                     break;
-                case 8:
+                case 12:
                     sleep.color = new Color32(0, 0, 0, 255);
                     pointer4.SetActive(true);
                     break;
@@ -175,7 +217,7 @@ public class GameManagerMousey : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && outOfBounds == true)
         {
             if (selectedOption <= 1)
-                selectedOption = 1;
+                selectedOption = 9;
             else
                 selectedOption -= 1;
 
@@ -183,6 +225,12 @@ public class GameManagerMousey : MonoBehaviour
             hatOff.color = new Color32(0, 0, 0, 20);
             glassOn.color = new Color32(0, 0, 0, 20);
             glassOff.color = new Color32(0, 0, 0, 20);
+            maskOn.color = new Color32(0, 0, 0, 20);
+            maskOff.color = new Color32(0, 0, 0, 20);
+            shoesOn.color = new Color32(0, 0, 0, 20);
+            shoesOff.color = new Color32(0, 0, 0, 20);
+
+            feed.color = new Color32(0, 0, 0, 0);
 
             switch (selectedOption)
             {
@@ -198,13 +246,29 @@ public class GameManagerMousey : MonoBehaviour
                 case 4:
                     glassOff.color = new Color32(255, 255, 255, 255);
                     break;
+                case 5:
+                    maskOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 6:
+                    maskOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 7:
+                    shoesOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 8:
+                    shoesOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 9:
+                    feed.color = new Color32(0, 0, 0, 255);
+                    pointer1.SetActive(true);
+                    break;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) && outOfBounds == false /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption -= 1;
-            if (selectedOption < 5) //If at end of list go back to top
+            if (selectedOption < 9) //If at end of list go back to top
             {
                 selectedOption = 1;
                 outOfBounds = true;
@@ -214,6 +278,10 @@ public class GameManagerMousey : MonoBehaviour
             hatOff.color = new Color32(0, 0, 0, 20);
             glassOn.color = new Color32(0, 0, 0, 20);
             glassOff.color = new Color32(0, 0, 0, 20);
+            maskOn.color = new Color32(0, 0, 0, 20);
+            maskOff.color = new Color32(0, 0, 0, 20);
+            shoesOn.color = new Color32(0, 0, 0, 20);
+            shoesOff.color = new Color32(0, 0, 0, 20);
 
             feed.color = new Color32(0, 0, 0, 0);
             wash.color = new Color32(0, 0, 0, 0);
@@ -244,18 +312,30 @@ public class GameManagerMousey : MonoBehaviour
                     glassOff.color = new Color32(255, 255, 255, 255);
                     break;
                 case 5:
+                    maskOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 6:
+                    maskOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 7:
+                    shoesOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 8:
+                    shoesOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 9:
                     feed.color = new Color32(0, 0, 0, 255);
                     pointer1.SetActive(true);
                     break;
-                case 6:
+                case 10:
                     wash.color = new Color32(0, 0, 0, 255);
                     pointer2.SetActive(true);
                     break;
-                case 7:
+                case 11:
                     play.color = new Color32(0, 0, 0, 255);
                     pointer3.SetActive(true);
                     break;
-                case 8:
+                case 12:
                     sleep.color = new Color32(0, 0, 0, 255);
                     pointer4.SetActive(true);
                     break;
@@ -309,14 +389,56 @@ public class GameManagerMousey : MonoBehaviour
                     }
                     break;
                 case 5:
+                    if (friendUnlock.hasMask == true)
+                    {
+                        customizationItems[2].SetActive(true);
+                        isMaskOn = true;
+                        mask = 1;
+                        PlayerPrefs.SetInt("mask", mask);
+                        FindObjectOfType<AudioManager>().Play("Click");
+                    }
+                    break;
+                case 6:
+                    if (friendUnlock.hasMask == true)
+                    {
+                        customizationItems[2].SetActive(false);
+                        isMaskOn = false;
+                        mask = 0;
+                        PlayerPrefs.DeleteKey("mask");
+                        FindObjectOfType<AudioManager>().Play("Click");
+                    }
+                    break;
+                case 7:
+                    if (friendUnlock.hasShoes == true)
+                    {
+                        customizationItems[3].SetActive(true);
+                        customizationItems[4].SetActive(true);
+                        isShoesOn = true;
+                        shoes = 1;
+                        PlayerPrefs.SetInt("shoes", shoes);
+                        FindObjectOfType<AudioManager>().Play("Click");
+                    }
+                    break;
+                case 8:
+                    if (friendUnlock.hasShoes == true)
+                    {
+                        customizationItems[3].SetActive(false);
+                        customizationItems[4].SetActive(false);
+                        isShoesOn = false;
+                        shoes = 0;
+                        PlayerPrefs.DeleteKey("shoes");
+                        FindObjectOfType<AudioManager>().Play("Click");
+                    }
+                    break;
+                case 9:
                     friend.GetComponent<Friend>().RequestFood();
                     //FindObjectOfType<AudioManager>().Play("Click");
                     break;
-                case 6:
+                case 10:
                     friend.GetComponent<Friend>().UpdateCleanliness(100);
                     //FindObjectOfType<AudioManager>().Play("Click");
                     break;
-                case 7:
+                case 11:
                     if (friendUnlock.isTired == false)
                     {
                         StartCoroutine(transitionAfterDelay());
@@ -324,7 +446,7 @@ public class GameManagerMousey : MonoBehaviour
                         //FindObjectOfType<AudioManager>().Play("Click");
                     }
                     break;
-                case 8:
+                case 12:
                     StartCoroutine(saveOnSleep());
                     transition.SetTrigger("TriggerTransition");
                     //FindObjectOfType<AudioManager>().Play("Click");
