@@ -687,9 +687,17 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("RunnerKoala1");
         }
-        if (friendUnlock.custom < 100)
+        if (friendUnlock.custom == 50)
         {
             SceneManager.LoadScene("RunnerKoala2");
+        }
+        if (friendUnlock.custom == 0)
+        {
+            SceneManager.LoadScene("RunnerKoala3");
+        }
+        if (friendUnlock.custom < 0)
+        {
+            SceneManager.LoadScene("RunnerKoala4");
         }
 
         friend.GetComponent<Friend>().SaveFriend();

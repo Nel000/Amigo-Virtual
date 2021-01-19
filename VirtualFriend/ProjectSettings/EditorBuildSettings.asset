@@ -27,11 +27,23 @@ EditorBuildSettings:
     path: Assets/Scenes/RunnerKoala2.unity
     guid: e39d27610605f82439718c26208f66e7
   - enabled: 1
+    path: Assets/Scenes/RunnerKoala3.unity
+    guid: d57be6025d22eec499c0d9fcbd138c5c
+  - enabled: 1
+    path: Assets/Scenes/RunnerKoala4.unity
+    guid: 114e35debd75a814aab0fa3f4ceab760
+  - enabled: 1
     path: Assets/Scenes/RunnerMousey1.unity
     guid: d3b2383e5b4f3d346840fec7769f0682
   - enabled: 1
     path: Assets/Scenes/RunnerMousey2.unity
     guid: e41a30275c07de54884be86a92ea7fd3
+  - enabled: 1
+    path: Assets/Scenes/RunnerMousey3.unity
+    guid: 2e8442dd80bb7b340b446833c6035e9e
+  - enabled: 1
+    path: Assets/Scenes/RunnerMousey4.unity
+    guid: 1a5dafbe7a5a026429b3aea567e640a0
   - enabled: 0
     path: Assets/Scenes/GameOver.unity
     guid: a8ee5927aeab7864a82c27b3d8a5d862

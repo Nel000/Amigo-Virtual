@@ -699,9 +699,17 @@ public class GameManagerMousey : MonoBehaviour
         {
             SceneManager.LoadScene("RunnerMousey1");
         }
-        if (friendUnlock.custom < 100)
+        if (friendUnlock.custom == 50)
         {
             SceneManager.LoadScene("RunnerMousey2");
+        }
+        if (friendUnlock.custom == 0)
+        {
+            SceneManager.LoadScene("RunnerMousey3");
+        }
+        if (friendUnlock.custom < 0)
+        {
+            SceneManager.LoadScene("RunnerMousey4");
         }
 
         friend.GetComponent<Friend>().SaveFriend();
