@@ -11,13 +11,21 @@ public class MenuManager : MonoBehaviour
     public Text reset;
     public Text instructions;
     public Text quit;
+    public Text back;
     //public Image exit;
+
+    public GameObject[] menuElements;
+    public GameObject returnImg;
 
     public Animator transition;
 
-    private int numOfOptions = 4;
+    private int numOfOptions = 5;
 
+    [SerializeField]
     private int selectedOption;
+
+    [SerializeField]
+    private bool isInstruction;
 
     [SerializeField]
     int levelIndex;
@@ -27,11 +35,14 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        isInstruction = false;
+
         selectedOption = 2;
         play.color = new Color32(255, 255, 255, 255);
         reset.color = new Color32(0, 0, 0, 255);
         instructions.color = new Color32(0, 0, 0, 255);
         quit.color = new Color32(0, 0, 0, 255);
+        back.color = new Color32(255, 255, 255, 0);
 
         InvokeRepeating("flashTheText", 0f, 0.5f);
 
@@ -44,10 +55,10 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) /*|| Controller input*/)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && isInstruction == false /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption += 1;
-            if (selectedOption > numOfOptions) //If at end of list go back to top
+            if (selectedOption > 4) //If at end of list go back to top
             {
                 selectedOption = 1;
             }
@@ -76,12 +87,12 @@ public class MenuManager : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Switch");
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) /*|| Controller input*/)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && isInstruction == false /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption -= 1;
             if (selectedOption < 1) //If at end of list go back to top
             {
-                selectedOption = numOfOptions;
+                selectedOption = 4;
             }
 
             play.color = new Color32(0, 0, 0, 255); //Make sure all others will be black (or do any visual you want to use to indicate this)
@@ -107,7 +118,7 @@ public class MenuManager : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Switch");
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown("joystick button 0"))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Picked: " + selectedOption); //For testing as the switch statment does nothing right now.
 
@@ -123,7 +134,13 @@ public class MenuManager : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
                 case 1:
-                    SceneManager.LoadScene("Instructions");
+                    //SceneManager.LoadScene("Instructions");
+                    isInstruction = true;
+                    //selectedOption = 5;
+                    for (int i = 0; i < menuElements.Length; i++)
+                        menuElements[i].SetActive(false);
+                    back.color = new Color32(255, 255, 255, 255);
+                    returnImg.SetActive(true);
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
                 case 4:
@@ -131,7 +148,22 @@ public class MenuManager : MonoBehaviour
                     transition.SetTrigger("TriggerTransition");
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
+                case 5:
+                    isInstruction = false;
+                    selectedOption = 1;
+                    for (int i = 0; i < menuElements.Length; i++)
+                        menuElements[i].SetActive(true);
+                    back.color = new Color32(255, 255, 255, 0);
+                    returnImg.SetActive(false);
+                    FindObjectOfType<AudioManager>().Play("Click");
+                    break;
+
             }
+        }
+
+        if (isInstruction == true)
+        {
+            selectedOption = 5;
         }
     }
 
