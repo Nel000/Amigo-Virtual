@@ -19,6 +19,7 @@ public class MenuManager : MonoBehaviour
 
     private int selectedOption;
 
+    [SerializeField]
     int levelIndex;
 
     public readonly int defaultLastLevel = 1; // Set as appropriate

@@ -39,6 +39,11 @@ public class GameManagerMousey : MonoBehaviour
     public GameObject pointer3;
     public GameObject pointer4;
 
+    public GameObject pointer1Press;
+    public GameObject pointer2Press;
+    public GameObject pointer3Press;
+    public GameObject pointer4Press;
+
     private int numOfOptions = 12;
 
     [SerializeField]
@@ -96,6 +101,7 @@ public class GameManagerMousey : MonoBehaviour
         if (PlayerPrefs.HasKey("shoes"))
         {
             customizationItems[3].SetActive(true);
+            customizationItems[4].SetActive(true);
         }
 
         selectedOption = 9;
@@ -132,13 +138,87 @@ public class GameManagerMousey : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //FindObjectOfType<AudioManager>().Play("Switch");
+            FindObjectOfType<AudioManager>().Play("Switch");
         }
 
         if (selectedOption >= 9)
             outOfBounds = false;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) /*|| Controller input*/)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && outOfBounds == true)
+        {
+            selectedOption += 1;
+
+            if (friendUnlock.hasHat != false && selectedOption > 2
+                && friendUnlock.hasGlasses == false
+                && friendUnlock.hasMask == false
+                && friendUnlock.hasShoes == false)
+            {
+                selectedOption = 9;
+            }
+
+            else if (friendUnlock.hasGlasses != false && selectedOption > 4
+                && friendUnlock.hasMask == false
+                && friendUnlock.hasShoes == false)
+            {
+                selectedOption = 9;
+            }
+
+            else if (friendUnlock.hasMask != false && selectedOption > 6
+                && friendUnlock.hasShoes == false)
+            {
+                selectedOption = 9;
+            }
+
+            else if (friendUnlock.hasShoes != false && selectedOption > 8)
+            {
+                selectedOption = 9;
+            }
+
+            hatOn.color = new Color32(0, 0, 0, 20);
+            hatOff.color = new Color32(0, 0, 0, 20);
+            glassOn.color = new Color32(0, 0, 0, 20);
+            glassOff.color = new Color32(0, 0, 0, 20);
+            maskOn.color = new Color32(0, 0, 0, 20);
+            maskOff.color = new Color32(0, 0, 0, 20);
+            shoesOn.color = new Color32(0, 0, 0, 20);
+            shoesOff.color = new Color32(0, 0, 0, 20);
+
+            feed.color = new Color32(0, 0, 0, 0);
+
+            switch (selectedOption)
+            {
+                case 1:
+                    hatOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 2:
+                    hatOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 3:
+                    glassOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 4:
+                    glassOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 5:
+                    maskOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 6:
+                    maskOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 7:
+                    shoesOn.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 8:
+                    shoesOff.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 9:
+                    feed.color = new Color32(0, 0, 0, 255);
+                    pointer1.SetActive(true);
+                    break;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) && outOfBounds == false /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption += 1;
             if (selectedOption > numOfOptions) //If at end of list go back to top
@@ -270,8 +350,13 @@ public class GameManagerMousey : MonoBehaviour
             selectedOption -= 1;
             if (selectedOption < 9) //If at end of list go back to top
             {
-                selectedOption = 1;
+                //selectedOption = 1;
                 outOfBounds = true;
+
+                if (friendUnlock.hasHat != false)
+                    selectedOption = 1;
+                else if (friendUnlock.hasHat == false)
+                    selectedOption = 9;
             }
 
             hatOn.color = new Color32(0, 0, 0, 20);
@@ -432,24 +517,47 @@ public class GameManagerMousey : MonoBehaviour
                     break;
                 case 9:
                     friend.GetComponent<Friend>().RequestFood();
-                    //FindObjectOfType<AudioManager>().Play("Click");
+                    pointer1Press.SetActive(true);
+                    FindObjectOfType<AudioManager>().Play("Click");
                     break;
                 case 10:
                     friend.GetComponent<Friend>().UpdateCleanliness(100);
-                    //FindObjectOfType<AudioManager>().Play("Click");
+                    pointer2Press.SetActive(true);
+                    FindObjectOfType<AudioManager>().Play("Click");
                     break;
                 case 11:
                     if (friendUnlock.isTired == false)
                     {
                         StartCoroutine(transitionAfterDelay());
                         transition.SetTrigger("TriggerTransition");
-                        //FindObjectOfType<AudioManager>().Play("Click");
+                        pointer3Press.SetActive(true);
+                        FindObjectOfType<AudioManager>().Play("Click");
                     }
                     break;
                 case 12:
                     StartCoroutine(saveOnSleep());
                     transition.SetTrigger("TriggerTransition");
-                    //FindObjectOfType<AudioManager>().Play("Click");
+                    pointer4Press.SetActive(true);
+                    FindObjectOfType<AudioManager>().Play("Click");
+                    break;
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp("joystick button 0"))
+        {
+            switch (selectedOption)
+            {
+                case 9:
+                    pointer1Press.SetActive(false);
+                    break;
+                case 10:
+                    pointer2Press.SetActive(false);
+                    break;
+                case 11:
+                    pointer3Press.SetActive(false);
+                    break;
+                case 12:
+                    pointer4Press.SetActive(false);
                     break;
             }
         }

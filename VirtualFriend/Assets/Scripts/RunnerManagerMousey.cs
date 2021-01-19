@@ -9,6 +9,8 @@ public class RunnerManagerMousey : MonoBehaviour
 
     public GameObject hat;
     public GameObject eyes;
+    public GameObject mask;
+    public GameObject[] shoes;
 
     private void Start()
     {
@@ -17,6 +19,8 @@ public class RunnerManagerMousey : MonoBehaviour
 
         PlayerPrefs.GetInt("head");
         PlayerPrefs.GetInt("eyes");
+        PlayerPrefs.GetInt("mask");
+        PlayerPrefs.GetInt("shoes");
 
         if (PlayerPrefs.HasKey("head"))
         {
@@ -26,6 +30,17 @@ public class RunnerManagerMousey : MonoBehaviour
         if (PlayerPrefs.HasKey("eyes"))
         {
             eyes.SetActive(true);
+        }
+
+        if (PlayerPrefs.HasKey("mask"))
+        {
+            mask.SetActive(true);
+        }
+
+        if (PlayerPrefs.HasKey("shoes"))
+        {
+            for (int i = 0; i < shoes.Length; i++)
+                shoes[i].SetActive(true);
         }
     }
 }

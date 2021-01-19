@@ -3810,6 +3810,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1507552728}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1507552730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8296172669048777603, guid: 20503772b9d5b474ea00a6a6678ab020,
+    type: 3}
+  m_PrefabInstance: {fileID: 1507552728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1507552731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8296172669172767095, guid: 20503772b9d5b474ea00a6a6678ab020,
+    type: 3}
+  m_PrefabInstance: {fileID: 1507552728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1507552732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8296172668152511074, guid: 20503772b9d5b474ea00a6a6678ab020,
+    type: 3}
+  m_PrefabInstance: {fileID: 1507552728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1513483618
 GameObject:
   m_ObjectHideFlags: 0
@@ -5114,6 +5132,11 @@ PrefabInstance:
       objectReference: {fileID: 45334928}
     - target: {fileID: 7950836890202208272, guid: 72969bee910a9eb4080e9bbf474248c7,
         type: 3}
+      propertyPath: shoes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950836890202208272, guid: 72969bee910a9eb4080e9bbf474248c7,
+        type: 3}
       propertyPath: friend
       value: 
       objectReference: {fileID: 45334928}
@@ -5127,6 +5150,21 @@ PrefabInstance:
       propertyPath: eyes
       value: 
       objectReference: {fileID: 1831235735}
+    - target: {fileID: 7950836890202208272, guid: 72969bee910a9eb4080e9bbf474248c7,
+        type: 3}
+      propertyPath: mask
+      value: 
+      objectReference: {fileID: 1507552732}
+    - target: {fileID: 7950836890202208272, guid: 72969bee910a9eb4080e9bbf474248c7,
+        type: 3}
+      propertyPath: shoes.Array.data[0]
+      value: 
+      objectReference: {fileID: 1507552731}
+    - target: {fileID: 7950836890202208272, guid: 72969bee910a9eb4080e9bbf474248c7,
+        type: 3}
+      propertyPath: shoes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1507552730}
     - target: {fileID: 7950836890202208273, guid: 72969bee910a9eb4080e9bbf474248c7,
         type: 3}
       propertyPath: m_Name
