@@ -959,6 +959,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 244022172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &244022178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8296172668473542537, guid: 6cf1e211572bffb4da5b2eced759e233,
+    type: 3}
+  m_PrefabInstance: {fileID: 244022172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &248140573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1772,6 +1778,11 @@ PrefabInstance:
       propertyPath: shoes.Array.data[1]
       value: 
       objectReference: {fileID: 244022175}
+    - target: {fileID: 9034549104282296843, guid: ce8a27cb416477346b9b08aa22c3f43d,
+        type: 3}
+      propertyPath: jacket
+      value: 
+      objectReference: {fileID: 244022178}
     - target: {fileID: 9034549104282296844, guid: ce8a27cb416477346b9b08aa22c3f43d,
         type: 3}
       propertyPath: m_LocalPosition.x

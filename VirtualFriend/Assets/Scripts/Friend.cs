@@ -54,6 +54,7 @@ public class Friend : MonoBehaviour
     public bool hasHat;
     public bool hasGlasses;
     public bool hasMask;
+    public bool hasJacket;
     public bool hasShoes;
 
     private bool serverTime;
@@ -401,9 +402,16 @@ public class Friend : MonoBehaviour
 
         if (custom < -50)
         {
-            hasShoes = true;
+            hasJacket = true;
             customImages[6].SetActive(true);
             customImages[7].SetActive(true);
+        }
+
+        if (custom < -100)
+        {
+            hasShoes = true;
+            customImages[8].SetActive(true);
+            customImages[9].SetActive(true);
         }
     }
 
