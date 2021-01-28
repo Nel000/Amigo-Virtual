@@ -154,7 +154,9 @@ public class GameManagerMousey : MonoBehaviour
 
         if (friendUnlock.isLocked == false)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption > 11
+            || Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption <= 11 && friendUnlock.hasHat != false
+            || Input.GetKeyDown(KeyCode.RightArrow) && selectedOption < numOfOptions)
             {
                 FindObjectOfType<AudioManager>().Play("Switch");
             }

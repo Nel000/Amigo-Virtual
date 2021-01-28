@@ -151,16 +151,16 @@ public class GameManager : MonoBehaviour
             "" + friend.GetComponent<Friend>().pEnergy;
         /*nameText.GetComponent<Text>().text =
             friend.GetComponent<Friend>().pName;*/
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption > 11
-            || Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption <= 11 && friendUnlock.hasHat != false
-            || Input.GetKeyDown(KeyCode.RightArrow) && selectedOption < numOfOptions)
-        {
-            FindObjectOfType<AudioManager>().Play("Switch");
-        }
-
+       
         if (friendUnlock.isLocked == false)
         {
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption > 11
+            || Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption <= 11 && friendUnlock.hasHat != false
+            || Input.GetKeyDown(KeyCode.RightArrow) && selectedOption < numOfOptions)
+            {
+                FindObjectOfType<AudioManager>().Play("Switch");
+            }
+
             if (selectedOption >= 11)
                 outOfBounds = false;
 
