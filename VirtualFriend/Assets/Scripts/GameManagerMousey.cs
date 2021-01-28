@@ -152,7 +152,7 @@ public class GameManagerMousey : MonoBehaviour
         /*nameText.GetComponent<Text>().text =
             friend.GetComponent<Friend>().pName;*/
 
-        if(locked == false)
+        if (friendUnlock.isLocked == false)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
@@ -597,14 +597,14 @@ public class GameManagerMousey : MonoBehaviour
                     case 11:
                         friend.GetComponent<Friend>().RequestFood();
                         pointer1Press.SetActive(true);
-                        locked = true;
+                        friendUnlock.isLocked = true;
                         FindObjectOfType<AudioManager>().Play("Click");
                         break;
                     case 12:
                         //friend.GetComponent<Friend>().UpdateCleanliness(100);
                         FindObjectOfType<AudioManager>().Play("Shower");
                         transitionShower.SetBool("Showering", true);
-                        locked = true;
+                        friendUnlock.isLocked = true;
                         StartCoroutine(Shower());
                         pointer2Press.SetActive(true);
                         FindObjectOfType<AudioManager>().Play("Click");
@@ -614,7 +614,7 @@ public class GameManagerMousey : MonoBehaviour
                         {
                             StartCoroutine(transitionAfterDelay());
                             transition.SetTrigger("TriggerTransition");
-                            locked = true;
+                            friendUnlock.isLocked = true;
                             pointer3Press.SetActive(true);
                             FindObjectOfType<AudioManager>().Play("Click");
                         }
@@ -622,7 +622,7 @@ public class GameManagerMousey : MonoBehaviour
                     case 14:
                         StartCoroutine(saveOnSleep());
                         transition.SetTrigger("TriggerTransition");
-                        locked = true;
+                        friendUnlock.isLocked = true;
                         pointer4Press.SetActive(true);
                         FindObjectOfType<AudioManager>().Play("Click");
                         break;
@@ -785,7 +785,7 @@ public class GameManagerMousey : MonoBehaviour
         yield return new WaitForSeconds(3);
         transitionShower.SetBool("Showering", false);
         pointer2Press.SetActive(false);
-        locked = false;
+        friendUnlock.isLocked = false;
     }
 
     IEnumerator transitionAfterDelay()

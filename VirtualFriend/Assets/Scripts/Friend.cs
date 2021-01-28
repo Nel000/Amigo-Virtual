@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Friend : MonoBehaviour
 {
-    public GameManager koala;
-    public GameManagerMousey mousey;
-
     public float maxValue = 100;
     public float minValue = 5;
 
@@ -64,6 +61,8 @@ public class Friend : MonoBehaviour
 
     private bool serverTime;
     private int clickCount;
+
+    public bool isLocked;
 
     public Animator friendAnim;
 
@@ -149,7 +148,7 @@ public class Friend : MonoBehaviour
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
-                mousey.locked = false;
+                isLocked = false;
                 pointer1Press.SetActive(false);
             }
 
@@ -160,7 +159,7 @@ public class Friend : MonoBehaviour
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
-                mousey.locked = false;
+                isLocked = false;
                 pointer1Press.SetActive(false);
             }
 
@@ -171,7 +170,7 @@ public class Friend : MonoBehaviour
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
-                mousey.locked = false;
+                isLocked = false;
                 pointer1Press.SetActive(false);
             }
 
@@ -184,7 +183,7 @@ public class Friend : MonoBehaviour
                 //balloon.SetActive(false);
                 //pizza.SetActive(false);
                 isHungry = false;
-                mousey.locked = false;
+                isLocked = false;
                 pointer1Press.SetActive(false);
             }
 
@@ -204,7 +203,7 @@ public class Friend : MonoBehaviour
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
-                mousey.locked = false;
+                isLocked = false;
                 pointer1Press.SetActive(false);
             }
         }       

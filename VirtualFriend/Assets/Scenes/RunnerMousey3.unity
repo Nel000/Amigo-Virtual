@@ -1733,6 +1733,10 @@ PrefabInstance:
       propertyPath: friend
       value: 
       objectReference: {fileID: 53500014}
+    - target: {fileID: 2105784998, guid: ce8a27cb416477346b9b08aa22c3f43d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9034549104282296842, guid: ce8a27cb416477346b9b08aa22c3f43d,
         type: 3}
       propertyPath: m_Name
@@ -1859,6 +1863,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &542722543 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 743375249, guid: ce8a27cb416477346b9b08aa22c3f43d,
+    type: 3}
+  m_PrefabInstance: {fileID: 542722540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &542722544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542722541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0887cd81c6416054c94fe67148483095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friend: {fileID: 53500014}
+  animator: {fileID: 542722543}
+  transitionDelayTime: 1
+--- !u!114 &542722545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542722541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee68c26a2c8a724e8509e2410a90666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friend: {fileID: 53500014}
+  canvas: {fileID: 0}
+  hat: {fileID: 244022173}
+  eyes: {fileID: 30177357}
+  mask: {fileID: 244022177}
+  jacket: {fileID: 244022178}
+  shoes:
+  - {fileID: 244022176}
+  - {fileID: 244022175}
 --- !u!1001 &546607034
 PrefabInstance:
   m_ObjectHideFlags: 0

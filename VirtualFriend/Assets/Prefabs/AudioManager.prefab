@@ -52,13 +52,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Mud
     clip: {fileID: 8300000, guid: 7f791da4ce768a2459c942bafc6d015f, type: 3}
-    volume: 0.7
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PickUp
     clip: {fileID: 8300000, guid: d12232443c8e0d04eb7b7c5132c9f5b6, type: 3}
-    volume: 0.7
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -70,6 +70,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Click
     clip: {fileID: 8300000, guid: 7210bd427c5a07b42810402a87218c76, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Shower
+    clip: {fileID: 8300000, guid: 9e3174069fe5b514f9fa77078945da04, type: 3}
     volume: 0.7
     pitch: 1
     loop: 0
