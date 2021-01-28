@@ -243,18 +243,18 @@ PrefabInstance:
     - target: {fileID: 4913672491757531398, guid: 07216db585ffbb0409b50b042ffcb1dc,
         type: 3}
       propertyPath: sounds.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4913672491757531398, guid: 07216db585ffbb0409b50b042ffcb1dc,
         type: 3}
       propertyPath: sounds.Array.data[5].name
-      value: Yawn
+      value: Shower
       objectReference: {fileID: 0}
     - target: {fileID: 4913672491757531398, guid: 07216db585ffbb0409b50b042ffcb1dc,
         type: 3}
       propertyPath: sounds.Array.data[5].clip
       value: 
-      objectReference: {fileID: 8300000, guid: ac3e1e16c9d32a54ca2f2db32b78227c, type: 3}
+      objectReference: {fileID: 8300000, guid: 9e3174069fe5b514f9fa77078945da04, type: 3}
     - target: {fileID: 4913672491757531398, guid: 07216db585ffbb0409b50b042ffcb1dc,
         type: 3}
       propertyPath: sounds.Array.data[5].volume

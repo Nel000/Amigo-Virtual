@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Friend : MonoBehaviour
 {
+    public GameManager koala;
+    public GameManagerMousey mousey;
+
     public float maxValue = 100;
     public float minValue = 5;
 
@@ -36,6 +39,8 @@ public class Friend : MonoBehaviour
     public GameObject hamburger;
     public GameObject apple;
     public GameObject[] images;
+
+    public GameObject pointer1Press;
 
     public float subtractHunger = -5;
     public float subtractHappiness = -5;
@@ -144,6 +149,8 @@ public class Friend : MonoBehaviour
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
+                mousey.locked = false;
+                pointer1Press.SetActive(false);
             }
 
             if (Input.GetKeyDown("h") && juice.activeSelf == true)
@@ -153,6 +160,8 @@ public class Friend : MonoBehaviour
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
+                mousey.locked = false;
+                pointer1Press.SetActive(false);
             }
 
             if (Input.GetKeyDown("j") && salad.activeSelf == true)
@@ -162,6 +171,8 @@ public class Friend : MonoBehaviour
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
+                mousey.locked = false;
+                pointer1Press.SetActive(false);
             }
 
             if (Input.GetKeyDown("k") && pizza.activeSelf == true)
@@ -173,6 +184,8 @@ public class Friend : MonoBehaviour
                 //balloon.SetActive(false);
                 //pizza.SetActive(false);
                 isHungry = false;
+                mousey.locked = false;
+                pointer1Press.SetActive(false);
             }
 
             /*if (Input.GetKeyDown("k") && hamburger.activeSelf == true)
@@ -191,6 +204,8 @@ public class Friend : MonoBehaviour
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
+                mousey.locked = false;
+                pointer1Press.SetActive(false);
             }
         }       
     }
