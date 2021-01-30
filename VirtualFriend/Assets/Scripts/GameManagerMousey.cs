@@ -219,34 +219,34 @@ public class GameManagerMousey : MonoBehaviour
                 switch (selectedOption)
                 {
                     case 1:
-                        hatOn.color = new Color32(255, 255, 255, 255);
+                        hatOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 2:
-                        hatOff.color = new Color32(255, 255, 255, 255);
+                        hatOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 3:
-                        glassOn.color = new Color32(255, 255, 255, 255);
+                        glassOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 4:
-                        glassOff.color = new Color32(255, 255, 255, 255);
+                        glassOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 5:
-                        maskOn.color = new Color32(255, 255, 255, 255);
+                        maskOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 6:
-                        maskOff.color = new Color32(255, 255, 255, 255);
+                        maskOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 7:
-                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        jacketOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 8:
-                        jacketOff.color = new Color32(255, 255, 255, 255);
+                        jacketOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 9:
-                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        shoesOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 10:
-                        shoesOff.color = new Color32(255, 255, 255, 255);
+                        shoesOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 11:
                         feed.color = new Color32(0, 0, 0, 255);
@@ -291,34 +291,34 @@ public class GameManagerMousey : MonoBehaviour
                         //custom.color = new Color32(0, 0, 0, 255);
                         break;*/
                     case 1:
-                        hatOn.color = new Color32(255, 255, 255, 255);
+                        hatOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 2:
-                        hatOff.color = new Color32(255, 255, 255, 255);
+                        hatOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 3:
-                        glassOn.color = new Color32(255, 255, 255, 255);
+                        glassOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 4:
-                        glassOff.color = new Color32(255, 255, 255, 255);
+                        glassOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 5:
-                        maskOn.color = new Color32(255, 255, 255, 255);
+                        maskOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 6:
-                        maskOff.color = new Color32(255, 255, 255, 255);
+                        maskOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 7:
-                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        jacketOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 8:
-                        jacketOff.color = new Color32(255, 255, 255, 255);
+                        jacketOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 9:
-                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        shoesOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 10:
-                        shoesOff.color = new Color32(255, 255, 255, 255);
+                        shoesOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 11:
                         feed.color = new Color32(0, 0, 0, 255);
@@ -362,34 +362,34 @@ public class GameManagerMousey : MonoBehaviour
                 switch (selectedOption)
                 {
                     case 1:
-                        hatOn.color = new Color32(255, 255, 255, 255);
+                        hatOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 2:
-                        hatOff.color = new Color32(255, 255, 255, 255);
+                        hatOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 3:
-                        glassOn.color = new Color32(255, 255, 255, 255);
+                        glassOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 4:
-                        glassOff.color = new Color32(255, 255, 255, 255);
+                        glassOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 5:
-                        maskOn.color = new Color32(255, 255, 255, 255);
+                        maskOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 6:
-                        maskOff.color = new Color32(255, 255, 255, 255);
+                        maskOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 7:
-                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        jacketOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 8:
-                        jacketOff.color = new Color32(255, 255, 255, 255);
+                        jacketOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 9:
-                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        shoesOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 10:
-                        shoesOff.color = new Color32(255, 255, 255, 255);
+                        shoesOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 11:
                         feed.color = new Color32(0, 0, 0, 255);
@@ -440,34 +440,34 @@ public class GameManagerMousey : MonoBehaviour
                         //custom.color = new Color32(0, 0, 0, 255);
                         break;*/
                     case 1:
-                        hatOn.color = new Color32(255, 255, 255, 255);
+                        hatOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 2:
-                        hatOff.color = new Color32(255, 255, 255, 255);
+                        hatOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 3:
-                        glassOn.color = new Color32(255, 255, 255, 255);
+                        glassOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 4:
-                        glassOff.color = new Color32(255, 255, 255, 255);
+                        glassOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 5:
-                        maskOn.color = new Color32(255, 255, 255, 255);
+                        maskOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 6:
-                        maskOff.color = new Color32(255, 255, 255, 255);
+                        maskOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 7:
-                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        jacketOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 8:
-                        jacketOff.color = new Color32(255, 255, 255, 255);
+                        jacketOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 9:
-                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        shoesOn.color = new Color32(70, 255, 0, 255);
                         break;
                     case 10:
-                        shoesOff.color = new Color32(255, 255, 255, 255);
+                        shoesOff.color = new Color32(70, 255, 0, 255);
                         break;
                     case 11:
                         feed.color = new Color32(0, 0, 0, 255);

@@ -1446,6 +1446,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transition
       objectReference: {fileID: 0}
+    - target: {fileID: 9034549104282296842, guid: ce8a27cb416477346b9b08aa22c3f43d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9034549104282296844, guid: ce8a27cb416477346b9b08aa22c3f43d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1661,6 +1666,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1494646081}
+    - target: {fileID: 1240376321, guid: e18c621bee7b8524ba3b79f5e2e37b01, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410868906, guid: e18c621bee7b8524ba3b79f5e2e37b01, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1528779830, guid: e18c621bee7b8524ba3b79f5e2e37b01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

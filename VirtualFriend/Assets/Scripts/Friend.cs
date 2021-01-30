@@ -144,7 +144,7 @@ public class Friend : MonoBehaviour
             if (Input.GetKeyDown("g") && water.activeSelf == true)
             {
                 Debug.Log("Feed");
-                UpdateHunger(20);
+                UpdateHunger(45);
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
@@ -155,7 +155,7 @@ public class Friend : MonoBehaviour
             if (Input.GetKeyDown("h") && juice.activeSelf == true)
             {
                 Debug.Log("Feed");
-                UpdateHunger(30);
+                UpdateHunger(60);
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
@@ -166,7 +166,7 @@ public class Friend : MonoBehaviour
             if (Input.GetKeyDown("j") && salad.activeSelf == true)
             {
                 Debug.Log("Feed");
-                UpdateHunger(40);
+                UpdateHunger(80);
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
@@ -177,7 +177,7 @@ public class Friend : MonoBehaviour
             if (Input.GetKeyDown("k") && pizza.activeSelf == true)
             {
                 Debug.Log("Feed");
-                UpdateHunger(70);
+                UpdateHunger(100);
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 //balloon.SetActive(false);
@@ -199,7 +199,7 @@ public class Friend : MonoBehaviour
             if (Input.GetKeyDown("l") && apple.activeSelf == true)
             {
                 Debug.Log("Feed");
-                UpdateHunger(40);
+                UpdateHunger(60);
                 UpdateHappiness(5);
                 randomImage.SetActive(false);
                 isHungry = false;
