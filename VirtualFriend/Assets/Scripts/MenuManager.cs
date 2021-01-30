@@ -14,6 +14,9 @@ public class MenuManager : MonoBehaviour
     public Text back;
     //public Image exit;
 
+    public Image instructionsImg;
+    public Image background;
+
     public GameObject[] menuElements;
     public GameObject returnImg;
 
@@ -141,6 +144,8 @@ public class MenuManager : MonoBehaviour
                         menuElements[i].SetActive(false);
                     back.color = new Color32(255, 255, 255, 255);
                     returnImg.SetActive(true);
+                    instructionsImg.enabled = true;
+                    background.color = new Color32(120, 120, 120, 255);
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
                 case 4:
@@ -155,6 +160,8 @@ public class MenuManager : MonoBehaviour
                         menuElements[i].SetActive(true);
                     back.color = new Color32(255, 255, 255, 0);
                     returnImg.SetActive(false);
+                    instructionsImg.enabled = false;
+                    background.color = new Color32(255, 255, 255, 255);
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
 
