@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     public Text play;
     public Text reset;
     public Text instructions;
+    public Text dataSheet;
     public Text quit;
     public Text back;
     //public Image exit;
@@ -22,13 +23,16 @@ public class MenuManager : MonoBehaviour
 
     public Animator transition;
 
-    private int numOfOptions = 5;
+    private int numOfOptions = 6;
 
     [SerializeField]
     private int selectedOption;
 
     [SerializeField]
     private bool isInstruction;
+
+    [SerializeField]
+    private bool isDataSheet;
 
     [SerializeField]
     int levelIndex;
@@ -38,12 +42,16 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        isInstruction = false;
+        Cursor.visible = false;
 
-        selectedOption = 2;
+        isInstruction = false;
+        isDataSheet = false;
+
+        selectedOption = 3;
         play.color = new Color32(255, 255, 255, 255);
         reset.color = new Color32(0, 0, 0, 255);
         instructions.color = new Color32(0, 0, 0, 255);
+        dataSheet.color = new Color32(0, 0, 0, 255);
         quit.color = new Color32(0, 0, 0, 255);
         back.color = new Color32(255, 255, 255, 0);
 
@@ -58,10 +66,11 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && isInstruction == false /*|| Controller input*/)
+        if (Input.GetKeyDown(KeyCode.RightArrow) 
+            && isInstruction == false && isDataSheet == false /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption += 1;
-            if (selectedOption > 4) //If at end of list go back to top
+            if (selectedOption > 5) //If at end of list go back to top
             {
                 selectedOption = 1;
             }
@@ -69,20 +78,24 @@ public class MenuManager : MonoBehaviour
             play.color = new Color32(0, 0, 0, 255);
             reset.color = new Color32(0, 0, 0, 255);
             instructions.color = new Color32(0, 0, 0, 255);
+            dataSheet.color = new Color32(0, 0, 0, 255);
             quit.color = new Color32(0, 0, 0, 255);
 
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    instructions.color = new Color32(255, 255, 255, 255);
+                    dataSheet.color = new Color32(255, 255, 255, 255);
                     break;
                 case 2:
-                    play.color = new Color32(255, 255, 255, 255);
+                    instructions.color = new Color32(255, 255, 255, 255);
                     break;
                 case 3:
-                    reset.color = new Color32(255, 255, 255, 255);
+                    play.color = new Color32(255, 255, 255, 255);
                     break;
                 case 4:
+                    reset.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 5:
                     quit.color = new Color32(255, 255, 255, 255);
                     break;
             }
@@ -90,30 +103,35 @@ public class MenuManager : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Switch");
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && isInstruction == false /*|| Controller input*/)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) 
+            && isInstruction == false && isDataSheet == false /*|| Controller input*/)
         { //Input telling it to go up or down.
             selectedOption -= 1;
             if (selectedOption < 1) //If at end of list go back to top
             {
-                selectedOption = 4;
+                selectedOption = 5;
             }
 
             play.color = new Color32(0, 0, 0, 255); //Make sure all others will be black (or do any visual you want to use to indicate this)
             reset.color = new Color32(0, 0, 0, 255);
             instructions.color = new Color32(0, 0, 0, 255);
+            dataSheet.color = new Color32(0, 0, 0, 255);
             quit.color = new Color32(0, 0, 0, 255);
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
                 case 1:
-                    instructions.color = new Color32(255, 255, 255, 255);
+                    dataSheet.color = new Color32(255, 255, 255, 255);
                     break;
                 case 2:
-                    play.color = new Color32(255, 255, 255, 255);
+                    instructions.color = new Color32(255, 255, 255, 255);
                     break;
                 case 3:
-                    reset.color = new Color32(255, 255, 255, 255);
+                    play.color = new Color32(255, 255, 255, 255);
                     break;
                 case 4:
+                    reset.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 5:
                     quit.color = new Color32(255, 255, 255, 255);
                     break;
             }
@@ -127,16 +145,25 @@ public class MenuManager : MonoBehaviour
 
             switch (selectedOption) //Set the visual indicator for which option you are on.
             {
-                case 2:
+                case 3:
                     Play();
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
-                case 3:
+                case 4:
                     PlayerPrefs.DeleteAll();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
                 case 1:
+                    isDataSheet = true;
+                    for (int i = 0; i < menuElements.Length; i++)
+                        menuElements[i].SetActive(false);
+                    back.color = new Color32(255, 255, 255, 255);
+                    returnImg.SetActive(true);
+                    background.color = new Color32(120, 120, 120, 255);
+                    FindObjectOfType<AudioManager>().Play("Click");
+                    break;
+                case 2:
                     //SceneManager.LoadScene("Instructions");
                     isInstruction = true;
                     //selectedOption = 5;
@@ -148,14 +175,22 @@ public class MenuManager : MonoBehaviour
                     background.color = new Color32(120, 120, 120, 255);
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
-                case 4:
+                case 5:
                     StartCoroutine(transitionToExit());
                     transition.SetTrigger("TriggerTransition");
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
-                case 5:
-                    isInstruction = false;
-                    selectedOption = 1;
+                case 6:
+                    if (isInstruction == true)
+                    {
+                        isInstruction = false;
+                        selectedOption = 2;
+                    }
+                    if (isDataSheet == true)
+                    {
+                        isDataSheet = false;
+                        selectedOption = 1;
+                    }                                    
                     for (int i = 0; i < menuElements.Length; i++)
                         menuElements[i].SetActive(true);
                     back.color = new Color32(255, 255, 255, 0);
@@ -164,13 +199,12 @@ public class MenuManager : MonoBehaviour
                     background.color = new Color32(255, 255, 255, 255);
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
-
             }
         }
 
-        if (isInstruction == true)
+        if (isInstruction == true || isDataSheet == true)
         {
-            selectedOption = 5;
+            selectedOption = 6;
         }
     }
 

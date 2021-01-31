@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("looks", 0);
         CreateFriend(PlayerPrefs.GetInt("looks"));*/
 
-        Cursor.visible = true;
+        Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.None;
 
         PlayerPrefs.GetInt("head");
