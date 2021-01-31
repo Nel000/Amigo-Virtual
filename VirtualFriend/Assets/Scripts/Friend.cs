@@ -150,6 +150,7 @@ public class Friend : MonoBehaviour
                 isHungry = false;
                 isLocked = false;
                 pointer1Press.SetActive(false);
+                FindObjectOfType<AudioManager>().Play("DrinkMousey");
             }
 
             if (Input.GetKeyDown("h") && juice.activeSelf == true)
@@ -161,6 +162,7 @@ public class Friend : MonoBehaviour
                 isHungry = false;
                 isLocked = false;
                 pointer1Press.SetActive(false);
+                FindObjectOfType<AudioManager>().Play("DrinkMousey");
             }
 
             if (Input.GetKeyDown("j") && salad.activeSelf == true)
@@ -172,6 +174,7 @@ public class Friend : MonoBehaviour
                 isHungry = false;
                 isLocked = false;
                 pointer1Press.SetActive(false);
+                FindObjectOfType<AudioManager>().Play("Eat");
             }
 
             if (Input.GetKeyDown("k") && pizza.activeSelf == true)
@@ -185,6 +188,7 @@ public class Friend : MonoBehaviour
                 isHungry = false;
                 isLocked = false;
                 pointer1Press.SetActive(false);
+                FindObjectOfType<AudioManager>().Play("Eat");
             }
 
             /*if (Input.GetKeyDown("k") && hamburger.activeSelf == true)
@@ -205,6 +209,7 @@ public class Friend : MonoBehaviour
                 isHungry = false;
                 isLocked = false;
                 pointer1Press.SetActive(false);
+                FindObjectOfType<AudioManager>().Play("EatApple");
             }
         }       
     }
