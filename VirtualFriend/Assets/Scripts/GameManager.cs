@@ -21,15 +21,17 @@ public class GameManager : MonoBehaviour
     public GameObject[] friendList;
 
     public Image hatOn;
-    public Image hatOff;
+    //public Image hatOff;
     public Image glassOn;
-    public Image glassOff;
+    //public Image glassOff;
     public Image maskOn;
-    public Image maskOff;
+    //public Image maskOff;
     public Image jacketOn;
-    public Image jacketOff;
+    //public Image jacketOff;
     public Image shoesOn;
-    public Image shoesOff;
+    //public Image shoesOff;
+
+    public Image[] select;
 
     public Text feed;
     public Text wash;
@@ -46,7 +48,9 @@ public class GameManager : MonoBehaviour
     public GameObject pointer3Press;
     public GameObject pointer4Press;
 
-    private int numOfOptions = 14;
+    public GameObject[] objectPointers;
+
+    private int numOfOptions = 9;
 
     [SerializeField]
     private int selectedOption;
@@ -59,10 +63,15 @@ public class GameManager : MonoBehaviour
     public Animator transition;
     public Animator transitionShower;
 
+    [SerializeField]
     private bool isHeadOn;
+    [SerializeField]
     private bool isEyesOn;
+    [SerializeField]
     private bool isMaskOn;
+    [SerializeField]
     private bool isJacketOn;
+    [SerializeField]
     private bool isShoesOn;
 
     public bool locked;
@@ -87,6 +96,8 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("head"))
         {
             customizationItems[0].SetActive(true);
+            isHeadOn = true;
+            select[0].enabled = true;
         }
 
         PlayerPrefs.GetInt("eyes");
@@ -94,6 +105,8 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("eyes"))
         {
             customizationItems[1].SetActive(true);
+            isEyesOn = true;
+            select[1].enabled = true;
         }
 
         PlayerPrefs.GetInt("mask");
@@ -101,6 +114,8 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("mask"))
         {
             customizationItems[2].SetActive(true);
+            isMaskOn = true;
+            select[2].enabled = true;
         }
 
         PlayerPrefs.GetInt("jacket");
@@ -108,6 +123,8 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("jacket"))
         {
             customizationItems[3].SetActive(true);
+            isJacketOn = true;
+            select[3].enabled = true;
         }
 
         PlayerPrefs.GetInt("shoes");
@@ -116,20 +133,22 @@ public class GameManager : MonoBehaviour
         {
             customizationItems[4].SetActive(true);
             customizationItems[5].SetActive(true);
+            isShoesOn = true;
+            select[4].enabled = true;
         }
 
-        selectedOption = 11;
+        selectedOption = 6;
 
         hatOn.color = new Color32(0, 0, 0, 20);
-        hatOff.color = new Color32(0, 0, 0, 20);
+        //hatOff.color = new Color32(0, 0, 0, 20);
         glassOn.color = new Color32(0, 0, 0, 20);
-        glassOff.color = new Color32(0, 0, 0, 20);
+        //glassOff.color = new Color32(0, 0, 0, 20);
         maskOn.color = new Color32(0, 0, 0, 20);
-        maskOff.color = new Color32(0, 0, 0, 20);
+        //maskOff.color = new Color32(0, 0, 0, 20);
         jacketOn.color = new Color32(0, 0, 0, 20);
-        jacketOff.color = new Color32(0, 0, 0, 20);
+        //jacketOff.color = new Color32(0, 0, 0, 20);
         shoesOn.color = new Color32(0, 0, 0, 20);
-        shoesOff.color = new Color32(0, 0, 0, 20);
+        //shoesOff.color = new Color32(0, 0, 0, 20);
 
         feed.color = new Color32(0, 0, 0, 255);
         wash.color = new Color32(0, 0, 0, 0);
@@ -154,101 +173,94 @@ public class GameManager : MonoBehaviour
        
         if (friendUnlock.isLocked == false)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption > 11
-            || Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption <= 11 && friendUnlock.hasHat != false
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption > 6
+            || Input.GetKeyDown(KeyCode.LeftArrow) && selectedOption <= 6 && friendUnlock.hasHat != false
             || Input.GetKeyDown(KeyCode.RightArrow) && selectedOption < numOfOptions)
             {
                 FindObjectOfType<AudioManager>().Play("Switch");
             }
 
-            if (selectedOption >= 11)
+            if (selectedOption >= 6)
                 outOfBounds = false;
 
             if (Input.GetKeyDown(KeyCode.RightArrow) && outOfBounds == true)
             {
                 selectedOption += 1;
 
-                if (friendUnlock.hasHat != false && selectedOption > 2
+                if (friendUnlock.hasHat != false && selectedOption > 1
                     && friendUnlock.hasGlasses == false
                     && friendUnlock.hasMask == false
                     && friendUnlock.hasJacket == false
                     && friendUnlock.hasShoes == false)
                 {
-                    selectedOption = 11;
+                    selectedOption = 6;
                 }
 
-                else if (friendUnlock.hasGlasses != false && selectedOption > 4
+                else if (friendUnlock.hasGlasses != false && selectedOption > 2
                     && friendUnlock.hasMask == false
                     && friendUnlock.hasJacket == false
                     && friendUnlock.hasShoes == false)
                 {
-                    selectedOption = 11;
+                    selectedOption = 6;
                 }
 
-                else if (friendUnlock.hasMask != false && selectedOption > 6
+                else if (friendUnlock.hasMask != false && selectedOption > 3
                     && friendUnlock.hasJacket == false
                     && friendUnlock.hasShoes == false)
                 {
-                    selectedOption = 11;
+                    selectedOption = 6;
                 }
 
-                else if (friendUnlock.hasJacket != false && selectedOption > 8
+                else if (friendUnlock.hasJacket != false && selectedOption > 4
                     && friendUnlock.hasShoes == false)
                 {
-                    selectedOption = 11;
+                    selectedOption = 6;
                 }
 
-                else if (friendUnlock.hasShoes != false && selectedOption > 10)
+                else if (friendUnlock.hasShoes != false && selectedOption > 5)
                 {
-                    selectedOption = 11;
+                    selectedOption = 6;
                 }
 
                 hatOn.color = new Color32(0, 0, 0, 20);
-                hatOff.color = new Color32(0, 0, 0, 20);
+                //hatOff.color = new Color32(0, 0, 0, 20);
                 glassOn.color = new Color32(0, 0, 0, 20);
-                glassOff.color = new Color32(0, 0, 0, 20);
+                //glassOff.color = new Color32(0, 0, 0, 20);
                 maskOn.color = new Color32(0, 0, 0, 20);
-                maskOff.color = new Color32(0, 0, 0, 20);
+                //maskOff.color = new Color32(0, 0, 0, 20);
                 jacketOn.color = new Color32(0, 0, 0, 20);
-                jacketOff.color = new Color32(0, 0, 0, 20);
+                //jacketOff.color = new Color32(0, 0, 0, 20);
                 shoesOn.color = new Color32(0, 0, 0, 20);
-                shoesOff.color = new Color32(0, 0, 0, 20);
+                //shoesOff.color = new Color32(0, 0, 0, 20);
+
+                for (int i = 0; i < objectPointers.Length; i++)
+                    objectPointers[i].SetActive(false);
 
                 feed.color = new Color32(0, 0, 0, 0);
 
                 switch (selectedOption)
                 {
                     case 1:
-                        hatOn.color = new Color32(70, 255, 0, 255);
-                        break;
+                        hatOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[0].SetActive(true);
+                        break;                  
                     case 2:
-                        hatOff.color = new Color32(70, 255, 0, 255);
-                        break;
+                        glassOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[1].SetActive(true);
+                        break;                  
                     case 3:
-                        glassOn.color = new Color32(70, 255, 0, 255);
-                        break;
+                        maskOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[2].SetActive(true);
+                        break;                    
                     case 4:
-                        glassOff.color = new Color32(70, 255, 0, 255);
-                        break;
+                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[3].SetActive(true);
+                        break;                    
                     case 5:
-                        maskOn.color = new Color32(70, 255, 0, 255);
-                        break;
+                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[4].SetActive(true);
+                        break;                   
                     case 6:
-                        maskOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 7:
-                        jacketOn.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 8:
-                        jacketOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 9:
-                        shoesOn.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 10:
-                        shoesOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 11:
                         feed.color = new Color32(0, 0, 0, 255);
                         pointer1.SetActive(true);
                         break;
@@ -264,15 +276,18 @@ public class GameManager : MonoBehaviour
                 }
 
                 hatOn.color = new Color32(0, 0, 0, 20);
-                hatOff.color = new Color32(0, 0, 0, 20);
+                //hatOff.color = new Color32(0, 0, 0, 20);
                 glassOn.color = new Color32(0, 0, 0, 20);
-                glassOff.color = new Color32(0, 0, 0, 20);
+                //glassOff.color = new Color32(0, 0, 0, 20);
                 maskOn.color = new Color32(0, 0, 0, 20);
-                maskOff.color = new Color32(0, 0, 0, 20);
+                //maskOff.color = new Color32(0, 0, 0, 20);
                 jacketOn.color = new Color32(0, 0, 0, 20);
-                jacketOff.color = new Color32(0, 0, 0, 20);
+                //jacketOff.color = new Color32(0, 0, 0, 20);
                 shoesOn.color = new Color32(0, 0, 0, 20);
-                shoesOff.color = new Color32(0, 0, 0, 20);
+                //shoesOff.color = new Color32(0, 0, 0, 20);
+
+                for (int i = 0; i < objectPointers.Length; i++)
+                    objectPointers[i].SetActive(false);
 
                 feed.color = new Color32(0, 0, 0, 0);
                 wash.color = new Color32(0, 0, 0, 0);
@@ -291,48 +306,38 @@ public class GameManager : MonoBehaviour
                         //custom.color = new Color32(0, 0, 0, 255);
                         break;*/
                     case 1:
-                        hatOn.color = new Color32(70, 255, 0, 255);
+                        hatOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[0].SetActive(true);
                         break;
                     case 2:
-                        hatOff.color = new Color32(70, 255, 0, 255);
+                        glassOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[1].SetActive(true);
                         break;
                     case 3:
-                        glassOn.color = new Color32(70, 255, 0, 255);
+                        maskOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[2].SetActive(true);
                         break;
                     case 4:
-                        glassOff.color = new Color32(70, 255, 0, 255);
+                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[3].SetActive(true);
                         break;
                     case 5:
-                        maskOn.color = new Color32(70, 255, 0, 255);
+                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[4].SetActive(true);
                         break;
                     case 6:
-                        maskOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 7:
-                        jacketOn.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 8:
-                        jacketOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 9:
-                        shoesOn.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 10:
-                        shoesOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 11:
                         feed.color = new Color32(0, 0, 0, 255);
                         pointer1.SetActive(true);
                         break;
-                    case 12:
+                    case 7:
                         wash.color = new Color32(0, 0, 0, 255);
                         pointer2.SetActive(true);
                         break;
-                    case 13:
+                    case 8:
                         play.color = new Color32(0, 0, 0, 255);
                         pointer3.SetActive(true);
                         break;
-                    case 14:
+                    case 9:
                         sleep.color = new Color32(0, 0, 0, 255);
                         pointer4.SetActive(true);
                         break;
@@ -342,56 +347,49 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow) && outOfBounds == true)
             {
                 if (selectedOption <= 1)
-                    selectedOption = 11;
+                    selectedOption = 6;
                 else
                     selectedOption -= 1;
 
                 hatOn.color = new Color32(0, 0, 0, 20);
-                hatOff.color = new Color32(0, 0, 0, 20);
+                //hatOff.color = new Color32(0, 0, 0, 20);
                 glassOn.color = new Color32(0, 0, 0, 20);
-                glassOff.color = new Color32(0, 0, 0, 20);
+                //glassOff.color = new Color32(0, 0, 0, 20);
                 maskOn.color = new Color32(0, 0, 0, 20);
-                maskOff.color = new Color32(0, 0, 0, 20);
+                //maskOff.color = new Color32(0, 0, 0, 20);
                 jacketOn.color = new Color32(0, 0, 0, 20);
-                jacketOff.color = new Color32(0, 0, 0, 20);
+                //jacketOff.color = new Color32(0, 0, 0, 20);
                 shoesOn.color = new Color32(0, 0, 0, 20);
-                shoesOff.color = new Color32(0, 0, 0, 20);
+                //shoesOff.color = new Color32(0, 0, 0, 20);
+
+                for (int i = 0; i < objectPointers.Length; i++)
+                    objectPointers[i].SetActive(false);
 
                 feed.color = new Color32(0, 0, 0, 0);
 
                 switch (selectedOption)
                 {
                     case 1:
-                        hatOn.color = new Color32(70, 255, 0, 255);
-                        break;
+                        hatOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[0].SetActive(true);
+                        break;                  
                     case 2:
-                        hatOff.color = new Color32(70, 255, 0, 255);
-                        break;
+                        glassOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[1].SetActive(true);
+                        break;                  
                     case 3:
-                        glassOn.color = new Color32(70, 255, 0, 255);
-                        break;
+                        maskOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[2].SetActive(true);
+                        break;                    
                     case 4:
-                        glassOff.color = new Color32(70, 255, 0, 255);
-                        break;
+                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[3].SetActive(true);
+                        break;                    
                     case 5:
-                        maskOn.color = new Color32(70, 255, 0, 255);
-                        break;
+                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[4].SetActive(true);
+                        break;                   
                     case 6:
-                        maskOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 7:
-                        jacketOn.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 8:
-                        jacketOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 9:
-                        shoesOn.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 10:
-                        shoesOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 11:
                         feed.color = new Color32(0, 0, 0, 255);
                         pointer1.SetActive(true);
                         break;
@@ -401,7 +399,7 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow) && outOfBounds == false /*|| Controller input*/)
             { //Input telling it to go up or down.
                 selectedOption -= 1;
-                if (selectedOption < 11) //If at end of list go back to top
+                if (selectedOption < 6) //If at end of list go back to top
                 {
                     //selectedOption = 1;
                     outOfBounds = true;
@@ -409,19 +407,22 @@ public class GameManager : MonoBehaviour
                     if (friendUnlock.hasHat != false)
                         selectedOption = 1;
                     else if (friendUnlock.hasHat == false)
-                        selectedOption = 11;
+                        selectedOption = 6;
                 }
 
                 hatOn.color = new Color32(0, 0, 0, 20);
-                hatOff.color = new Color32(0, 0, 0, 20);
+                //hatOff.color = new Color32(0, 0, 0, 20);
                 glassOn.color = new Color32(0, 0, 0, 20);
-                glassOff.color = new Color32(0, 0, 0, 20);
+                //glassOff.color = new Color32(0, 0, 0, 20);
                 maskOn.color = new Color32(0, 0, 0, 20);
-                maskOff.color = new Color32(0, 0, 0, 20);
+                //maskOff.color = new Color32(0, 0, 0, 20);
                 jacketOn.color = new Color32(0, 0, 0, 20);
-                jacketOff.color = new Color32(0, 0, 0, 20);
+                //jacketOff.color = new Color32(0, 0, 0, 20);
                 shoesOn.color = new Color32(0, 0, 0, 20);
-                shoesOff.color = new Color32(0, 0, 0, 20);
+                //shoesOff.color = new Color32(0, 0, 0, 20);
+
+                for (int i = 0; i < objectPointers.Length; i++)
+                    objectPointers[i].SetActive(false);
 
                 feed.color = new Color32(0, 0, 0, 0);
                 wash.color = new Color32(0, 0, 0, 0);
@@ -440,48 +441,38 @@ public class GameManager : MonoBehaviour
                         //custom.color = new Color32(0, 0, 0, 255);
                         break;*/
                     case 1:
-                        hatOn.color = new Color32(70, 255, 0, 255);
+                        hatOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[0].SetActive(true);
                         break;
                     case 2:
-                        hatOff.color = new Color32(70, 255, 0, 255);
+                        glassOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[1].SetActive(true);
                         break;
                     case 3:
-                        glassOn.color = new Color32(70, 255, 0, 255);
+                        maskOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[2].SetActive(true);
                         break;
                     case 4:
-                        glassOff.color = new Color32(70, 255, 0, 255);
+                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[3].SetActive(true);
                         break;
                     case 5:
-                        maskOn.color = new Color32(70, 255, 0, 255);
+                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        objectPointers[4].SetActive(true);
                         break;
                     case 6:
-                        maskOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 7:
-                        jacketOn.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 8:
-                        jacketOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 9:
-                        shoesOn.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 10:
-                        shoesOff.color = new Color32(70, 255, 0, 255);
-                        break;
-                    case 11:
                         feed.color = new Color32(0, 0, 0, 255);
                         pointer1.SetActive(true);
                         break;
-                    case 12:
+                    case 7:
                         wash.color = new Color32(0, 0, 0, 255);
                         pointer2.SetActive(true);
                         break;
-                    case 13:
+                    case 8:
                         play.color = new Color32(0, 0, 0, 255);
                         pointer3.SetActive(true);
                         break;
-                    case 14:
+                    case 9:
                         sleep.color = new Color32(0, 0, 0, 255);
                         pointer4.SetActive(true);
                         break;
@@ -497,14 +488,27 @@ public class GameManager : MonoBehaviour
                     case 1:
                         if (friendUnlock.hasHat == true)
                         {
-                            customizationItems[0].SetActive(true);
-                            isHeadOn = true;
-                            head = 1;
-                            PlayerPrefs.SetInt("head", head);
-                            FindObjectOfType<AudioManager>().Play("Click");
+                            if (Input.GetKeyDown(KeyCode.Return) && isHeadOn == false)
+                            {
+                                customizationItems[0].SetActive(true);
+                                select[0].enabled = true;
+                                isHeadOn = true;
+                                head = 1;
+                                PlayerPrefs.SetInt("head", head);
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }
+                            else if (Input.GetKeyDown(KeyCode.Return) && isHeadOn == true)
+                            {
+                                customizationItems[0].SetActive(false);
+                                select[0].enabled = false;
+                                isHeadOn = false;
+                                head = 0;
+                                PlayerPrefs.DeleteKey("head");
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }                       
                         }
                         break;
-                    case 2:
+                    /*case 2:
                         if (friendUnlock.hasHat == true)
                         {
                             customizationItems[0].SetActive(false);
@@ -513,18 +517,31 @@ public class GameManager : MonoBehaviour
                             PlayerPrefs.DeleteKey("head");
                             FindObjectOfType<AudioManager>().Play("Click");
                         }
-                        break;
-                    case 3:
+                        break;*/
+                    case 2:
                         if (friendUnlock.hasGlasses == true)
                         {
-                            customizationItems[1].SetActive(true);
-                            isEyesOn = true;
-                            eyes = 1;
-                            PlayerPrefs.SetInt("eyes", eyes);
-                            FindObjectOfType<AudioManager>().Play("Click");
+                            if (Input.GetKeyDown(KeyCode.Return) && isEyesOn == false)
+                            {
+                                customizationItems[1].SetActive(true);
+                                select[1].enabled = true;
+                                isEyesOn = true;
+                                eyes = 1;
+                                PlayerPrefs.SetInt("eyes", eyes);
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }
+                            else if (Input.GetKeyDown(KeyCode.Return) && isEyesOn == true)
+                            {
+                                customizationItems[1].SetActive(false);
+                                select[1].enabled = false;
+                                isEyesOn = false;
+                                eyes = 0;
+                                PlayerPrefs.DeleteKey("eyes");
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }                          
                         }
                         break;
-                    case 4:
+                    /*case 4:
                         if (friendUnlock.hasGlasses == true)
                         {
                             customizationItems[1].SetActive(false);
@@ -533,18 +550,31 @@ public class GameManager : MonoBehaviour
                             PlayerPrefs.DeleteKey("eyes");
                             FindObjectOfType<AudioManager>().Play("Click");
                         }
-                        break;
-                    case 5:
+                        break;*/
+                    case 3:
                         if (friendUnlock.hasMask == true)
                         {
-                            customizationItems[2].SetActive(true);
-                            isMaskOn = true;
-                            mask = 1;
-                            PlayerPrefs.SetInt("mask", mask);
-                            FindObjectOfType<AudioManager>().Play("Click");
+                            if (Input.GetKeyDown(KeyCode.Return) && isMaskOn == false)
+                            {
+                                customizationItems[2].SetActive(true);
+                                select[2].enabled = true;
+                                isMaskOn = true;
+                                mask = 1;
+                                PlayerPrefs.SetInt("mask", mask);
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }
+                            else if (Input.GetKeyDown(KeyCode.Return) && isMaskOn == true)
+                            {
+                                customizationItems[2].SetActive(false);
+                                select[2].enabled = false;
+                                isMaskOn = false;
+                                mask = 0;
+                                PlayerPrefs.DeleteKey("mask");
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }                          
                         }
                         break;
-                    case 6:
+                    /*case 6:
                         if (friendUnlock.hasMask == true)
                         {
                             customizationItems[2].SetActive(false);
@@ -553,18 +583,31 @@ public class GameManager : MonoBehaviour
                             PlayerPrefs.DeleteKey("mask");
                             FindObjectOfType<AudioManager>().Play("Click");
                         }
-                        break;
-                    case 7:
+                        break;*/
+                    case 4:
                         if (friendUnlock.hasJacket == true)
                         {
-                            customizationItems[3].SetActive(true);
-                            isJacketOn = true;
-                            jacket = 1;
-                            PlayerPrefs.SetInt("jacket", jacket);
-                            FindObjectOfType<AudioManager>().Play("Click");
+                            if (Input.GetKeyDown(KeyCode.Return) && isJacketOn == false)
+                            {
+                                customizationItems[3].SetActive(true);
+                                select[3].enabled = true;
+                                isJacketOn = true;
+                                jacket = 1;
+                                PlayerPrefs.SetInt("jacket", jacket);
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }
+                            else if (Input.GetKeyDown(KeyCode.Return) && isJacketOn == true)
+                            {
+                                customizationItems[3].SetActive(false);
+                                select[3].enabled = false;
+                                isJacketOn = false;
+                                jacket = 0;
+                                PlayerPrefs.DeleteKey("jacket");
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }                         
                         }
                         break;
-                    case 8:
+                    /*case 8:
                         if (friendUnlock.hasJacket == true)
                         {
                             customizationItems[3].SetActive(false);
@@ -573,19 +616,33 @@ public class GameManager : MonoBehaviour
                             PlayerPrefs.DeleteKey("jacket");
                             FindObjectOfType<AudioManager>().Play("Click");
                         }
-                        break;
-                    case 9:
+                        break;*/
+                    case 5:
                         if (friendUnlock.hasShoes == true)
                         {
-                            customizationItems[4].SetActive(true);
-                            customizationItems[5].SetActive(true);
-                            isShoesOn = true;
-                            shoes = 1;
-                            PlayerPrefs.SetInt("shoes", shoes);
-                            FindObjectOfType<AudioManager>().Play("Click");
+                            if (Input.GetKeyDown(KeyCode.Return) && isShoesOn == false)
+                            {
+                                customizationItems[4].SetActive(true);
+                                customizationItems[5].SetActive(true);
+                                select[4].enabled = true;
+                                isShoesOn = true;
+                                shoes = 1;
+                                PlayerPrefs.SetInt("shoes", shoes);
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }
+                            else if (Input.GetKeyDown(KeyCode.Return) && isShoesOn == true)
+                            {
+                                customizationItems[4].SetActive(false);
+                                customizationItems[5].SetActive(false);
+                                select[4].enabled = false;
+                                isShoesOn = false;
+                                shoes = 0;
+                                PlayerPrefs.DeleteKey("shoes");
+                                FindObjectOfType<AudioManager>().Play("Click");
+                            }
                         }
                         break;
-                    case 10:
+                    /*case 10:
                         if (friendUnlock.hasShoes == true)
                         {
                             customizationItems[4].SetActive(false);
@@ -595,14 +652,14 @@ public class GameManager : MonoBehaviour
                             PlayerPrefs.DeleteKey("shoes");
                             FindObjectOfType<AudioManager>().Play("Click");
                         }
-                        break;
-                    case 11:
+                        break;*/
+                    case 6:
                         friend.GetComponent<Friend>().RequestFood();
                         pointer1Press.SetActive(true);
                         friendUnlock.isLocked = true;
                         FindObjectOfType<AudioManager>().Play("Click");
                         break;
-                    case 12:
+                    case 7:
                         //friend.GetComponent<Friend>().UpdateCleanliness(100);
                         FindObjectOfType<AudioManager>().Play("Shower");
                         transitionShower.SetBool("Showering", true);
@@ -611,7 +668,7 @@ public class GameManager : MonoBehaviour
                         pointer2Press.SetActive(true);
                         FindObjectOfType<AudioManager>().Play("Click");
                         break;
-                    case 13:
+                    case 8:
                         if (friendUnlock.isTired == false)
                         {
                             StartCoroutine(transitionAfterDelay());
@@ -621,7 +678,7 @@ public class GameManager : MonoBehaviour
                             FindObjectOfType<AudioManager>().Play("Click");
                         }
                         break;
-                    case 14:
+                    case 9:
                         StartCoroutine(saveOnSleep());
                         transition.SetTrigger("TriggerTransition");
                         friendUnlock.isLocked = true;
