@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour
     public GameObject dataSheetText;
     public GameObject instructionsImg;
     public Image background;
+    public Image instructionsCorner;
 
     public GameObject[] menuElements;
     public GameObject returnImg;
@@ -161,6 +162,7 @@ public class MenuManager : MonoBehaviour
                         menuElements[i].SetActive(false);
                     back.color = new Color32(255, 255, 255, 255);
                     returnImg.SetActive(true);
+                    instructionsCorner.enabled = false;
                     dataSheetText.SetActive(true);
                     background.color = new Color32(120, 120, 120, 255);
                     FindObjectOfType<AudioManager>().Play("Click");
@@ -174,6 +176,7 @@ public class MenuManager : MonoBehaviour
                     back.color = new Color32(255, 255, 255, 255);
                     returnImg.SetActive(true);
                     instructionsImg.SetActive(true);
+                    instructionsCorner.enabled = false;
                     background.color = new Color32(120, 120, 120, 255);
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
@@ -200,6 +203,7 @@ public class MenuManager : MonoBehaviour
                     back.color = new Color32(255, 255, 255, 0);
                     returnImg.SetActive(false);                   
                     background.color = new Color32(255, 255, 255, 255);
+                    instructionsCorner.enabled = true;
                     FindObjectOfType<AudioManager>().Play("Click");
                     break;
             }
