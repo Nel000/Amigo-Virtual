@@ -13,6 +13,8 @@ public class RunnerManagerMousey : MonoBehaviour
     public GameObject jacket;
     public GameObject[] shoes;
 
+    public AudioSource steps;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -59,5 +61,6 @@ public class RunnerManagerMousey : MonoBehaviour
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(4);
         Time.timeScale = 1;
+        steps.Play();
     }
 }
