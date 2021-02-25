@@ -49,5 +49,15 @@ public class RunnerManagerMousey : MonoBehaviour
             for (int i = 0; i < shoes.Length; i++)
                 shoes[i].SetActive(true);
         }
+
+        StartCoroutine(timeToStart());
+    }
+
+    IEnumerator timeToStart()
+    {
+        yield return new WaitForSeconds(0);
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(4);
+        Time.timeScale = 1;
     }
 }
