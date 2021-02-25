@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
         shoesOn.color = new Color32(0, 0, 0, 20);
         //shoesOff.color = new Color32(0, 0, 0, 20);
 
-        feed.color = new Color32(0, 0, 0, 255);
+        feed.color = new Color32(255, 255, 255, 255);
         wash.color = new Color32(0, 0, 0, 0);
         play.color = new Color32(0, 0, 0, 0);
         sleep.color = new Color32(0, 0, 0, 0);
@@ -246,27 +246,27 @@ public class GameManager : MonoBehaviour
                 switch (selectedOption)
                 {
                     case 1:
-                        hatOn.color = new Color32(255, 255, 255, 255);
+                        //hatOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[0].SetActive(true);
                         break;                  
                     case 2:
-                        glassOn.color = new Color32(255, 255, 255, 255);
+                        //glassOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[1].SetActive(true);
                         break;                  
                     case 3:
-                        maskOn.color = new Color32(255, 255, 255, 255);
+                        //maskOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[2].SetActive(true);
                         break;                    
                     case 4:
-                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        //jacketOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[3].SetActive(true);
                         break;                    
                     case 5:
-                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        //shoesOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[4].SetActive(true);
                         break;                   
                     case 6:
-                        feed.color = new Color32(0, 0, 0, 255);
+                        feed.color = new Color32(255, 255, 255, 255);
                         pointer1.SetActive(true);
                         break;
                 }
@@ -311,39 +311,39 @@ public class GameManager : MonoBehaviour
                         //custom.color = new Color32(0, 0, 0, 255);
                         break;*/
                     case 1:
-                        hatOn.color = new Color32(255, 255, 255, 255);
+                        //hatOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[0].SetActive(true);
                         break;
                     case 2:
-                        glassOn.color = new Color32(255, 255, 255, 255);
+                        //glassOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[1].SetActive(true);
                         break;
                     case 3:
-                        maskOn.color = new Color32(255, 255, 255, 255);
+                        //maskOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[2].SetActive(true);
                         break;
                     case 4:
-                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        //jacketOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[3].SetActive(true);
                         break;
                     case 5:
-                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        //shoesOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[4].SetActive(true);
                         break;
                     case 6:
-                        feed.color = new Color32(0, 0, 0, 255);
+                        feed.color = new Color32(255, 255, 255, 255);
                         pointer1.SetActive(true);
                         break;
                     case 7:
-                        wash.color = new Color32(0, 0, 0, 255);
+                        wash.color = new Color32(255, 255, 255, 255);
                         pointer2.SetActive(true);
                         break;
                     case 8:
-                        play.color = new Color32(0, 0, 0, 255);
+                        play.color = new Color32(255, 255, 255, 255);
                         pointer3.SetActive(true);
                         break;
                     case 9:
-                        sleep.color = new Color32(0, 0, 0, 255);
+                        sleep.color = new Color32(255, 255, 255, 255);
                         pointer4.SetActive(true);
                         break;
                 }
@@ -375,27 +375,27 @@ public class GameManager : MonoBehaviour
                 switch (selectedOption)
                 {
                     case 1:
-                        hatOn.color = new Color32(255, 255, 255, 255);
+                        //hatOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[0].SetActive(true);
                         break;                  
                     case 2:
-                        glassOn.color = new Color32(255, 255, 255, 255);
+                        //glassOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[1].SetActive(true);
                         break;                  
                     case 3:
-                        maskOn.color = new Color32(255, 255, 255, 255);
+                        //maskOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[2].SetActive(true);
                         break;                    
                     case 4:
-                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        //jacketOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[3].SetActive(true);
                         break;                    
                     case 5:
-                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        //shoesOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[4].SetActive(true);
                         break;                   
                     case 6:
-                        feed.color = new Color32(0, 0, 0, 255);
+                        feed.color = new Color32(255, 255, 255, 255);
                         pointer1.SetActive(true);
                         break;
                 }
@@ -446,39 +446,39 @@ public class GameManager : MonoBehaviour
                         //custom.color = new Color32(0, 0, 0, 255);
                         break;*/
                     case 1:
-                        hatOn.color = new Color32(255, 255, 255, 255);
+                        //hatOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[0].SetActive(true);
                         break;
                     case 2:
-                        glassOn.color = new Color32(255, 255, 255, 255);
+                        //glassOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[1].SetActive(true);
                         break;
                     case 3:
-                        maskOn.color = new Color32(255, 255, 255, 255);
+                        //maskOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[2].SetActive(true);
                         break;
                     case 4:
-                        jacketOn.color = new Color32(255, 255, 255, 255);
+                        //jacketOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[3].SetActive(true);
                         break;
                     case 5:
-                        shoesOn.color = new Color32(255, 255, 255, 255);
+                        //shoesOn.color = new Color32(40, 150, 0, 255);
                         objectPointers[4].SetActive(true);
                         break;
                     case 6:
-                        feed.color = new Color32(0, 0, 0, 255);
+                        feed.color = new Color32(255, 255, 255, 255);
                         pointer1.SetActive(true);
                         break;
                     case 7:
-                        wash.color = new Color32(0, 0, 0, 255);
+                        wash.color = new Color32(255, 255, 255, 255);
                         pointer2.SetActive(true);
                         break;
                     case 8:
-                        play.color = new Color32(0, 0, 0, 255);
+                        play.color = new Color32(255, 255, 255, 255);
                         pointer3.SetActive(true);
                         break;
                     case 9:
-                        sleep.color = new Color32(0, 0, 0, 255);
+                        sleep.color = new Color32(255, 255, 255, 255);
                         pointer4.SetActive(true);
                         break;
                 }
