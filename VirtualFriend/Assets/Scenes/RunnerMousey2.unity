@@ -2007,7 +2007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friend: {fileID: 53500014}
   animator: {fileID: 542722543}
-  transitionDelayTime: 1
+  transitionDelayTime: 1.2
 --- !u!114 &542722545
 MonoBehaviour:
   m_ObjectHideFlags: 0

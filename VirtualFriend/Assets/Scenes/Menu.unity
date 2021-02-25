@@ -715,8 +715,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1124238543}
+  - component: {fileID: 1124238545}
   - component: {fileID: 1124238544}
   m_Layer: 5
+  m_Name: InstructionsCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

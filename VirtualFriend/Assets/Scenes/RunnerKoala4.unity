@@ -5265,6 +5265,10 @@ PrefabInstance:
       propertyPath: friend
       value: 
       objectReference: {fileID: 45334928}
+    - target: {fileID: 2039211748, guid: 72969bee910a9eb4080e9bbf474248c7, type: 3}
+      propertyPath: transitionDelayTime
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7950836890202208272, guid: 72969bee910a9eb4080e9bbf474248c7,
         type: 3}
       propertyPath: shoes.Array.size

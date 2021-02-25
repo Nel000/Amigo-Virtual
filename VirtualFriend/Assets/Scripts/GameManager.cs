@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -30,6 +31,10 @@ public class GameManager : MonoBehaviour
     //public Image jacketOff;
     public Image shoesOn;
     //public Image shoesOff;
+
+    public RawImage bubbleImg;
+
+    public VideoPlayer bubbles;
 
     public Image[] select;
 
@@ -827,17 +832,21 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Shower()
     {
+        yield return new WaitForSeconds(1);
+        bubbleImg.enabled = true;
+        bubbles.Play();
         yield return new WaitForSeconds(2);
         friend.GetComponent<Friend>().UpdateCleanliness(100);
         yield return new WaitForSeconds(3);
         transitionShower.SetBool("Showering", false);
+        bubbleImg.enabled = false;
         pointer2Press.SetActive(false);
         friendUnlock.isLocked = false;
     }
 
     IEnumerator transitionAfterDelay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.2f);
 
         if (friendUnlock.custom == 100)
         {
@@ -865,7 +874,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator saveOnSleep()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.2f);
         friend.GetComponent<Friend>().UpdateEnergy(100);
         friend.GetComponent<Friend>().SaveFriend();
         Application.Quit();
