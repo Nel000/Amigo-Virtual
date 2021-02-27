@@ -59,7 +59,7 @@ public class RunnerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0);
         Time.timeScale = 0;
-        yield return new WaitForSecondsRealtime(4);
+        yield return new WaitForSecondsRealtime(3.5f);
         Time.timeScale = 1;
         steps.Play();
     }

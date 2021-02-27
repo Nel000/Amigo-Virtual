@@ -116,7 +116,7 @@ public class SetupManager : MonoBehaviour
 
     IEnumerator transitionAfterDelay1()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.5f);
         levelIndex = SceneManager.GetActiveScene().buildIndex + 1; // use this instead
         PlayerPrefs.SetInt("Last_Level", levelIndex);
         PlayerPrefs.Save();
@@ -125,7 +125,7 @@ public class SetupManager : MonoBehaviour
 
     IEnumerator transitionAfterDelay2()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.5f);
         levelIndex = SceneManager.GetActiveScene().buildIndex + 2; // use this instead
         PlayerPrefs.SetInt("Last_Level", levelIndex);
         PlayerPrefs.Save();

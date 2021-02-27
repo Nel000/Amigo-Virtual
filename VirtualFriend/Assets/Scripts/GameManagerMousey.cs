@@ -32,7 +32,7 @@ public class GameManagerMousey : MonoBehaviour
     public Image shoesOn;
     //public Image shoesOff;
 
-    public RawImage bubbleImg;
+    public GameObject bubbleImg;
 
     public VideoPlayer bubbles;
 
@@ -845,13 +845,13 @@ public class GameManagerMousey : MonoBehaviour
     IEnumerator Shower()
     {
         yield return new WaitForSeconds(1);
-        bubbleImg.enabled = true;
+        bubbleImg.SetActive(true);
         bubbles.Play();
         yield return new WaitForSeconds(2);
         friend.GetComponent<Friend>().UpdateCleanliness(100);
         yield return new WaitForSeconds(3);
         transitionShower.SetBool("Showering", false);
-        bubbleImg.enabled = false;
+        bubbleImg.SetActive(false);
         pointer2Press.SetActive(false);
         friendUnlock.isLocked = false;
     }
@@ -886,7 +886,7 @@ public class GameManagerMousey : MonoBehaviour
 
     IEnumerator saveOnSleep()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.5f);
         friend.GetComponent<Friend>().UpdateEnergy(100);
         friend.GetComponent<Friend>().SaveFriend();
         Application.Quit();
