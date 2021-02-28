@@ -828,7 +828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.09413091, y: -0.70081335, z: 0.091060035, w: 0.701219}
-  m_LocalPosition: {x: 81.6, y: 65, z: -46.100002}
+  m_LocalPosition: {x: 81.6, y: 67, z: -46.100002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2583,6 +2583,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Balloons
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537160390938486076, guid: 04b357d3d76ec7946b7178ff95b1de4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04b357d3d76ec7946b7178ff95b1de4f, type: 3}
